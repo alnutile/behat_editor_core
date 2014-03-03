@@ -3,10 +3,14 @@
 
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
-use BehatApp\BehatFormatter;
-use BehatApp\BehatYml;
 use BehatApp\BehatFeatureContextUpdate;
 
+/**
+ * See related tests for examples and docs
+ *
+ * Class BehatHelper
+ * @package BehatApp
+ */
 class BehatHelper
 {
     const BASE_BEHAT_FOLDER = '/behat';
@@ -21,28 +25,46 @@ class BehatHelper
     public $storage_path;
     public $bin_path;
     public $results;
+    public $app_path;
     public $behatYml;
+    public $behatYml_path;
+    public $templateFolder;
+    public $bootstrapPath;
+    public $testPath;
+    public $fullPathAndFilenameToFeatureContext;
+    public $rootHashFolder;
+    public $hash;
 
-    public function __construct(Filesystem $fileSystem = null, Finder $finder = null, BehatFormatter $behatFormatter = null, BehatYml $behatYml = null)
+    public function __construct($storage_path, $app_base, Filesystem $fileSystem = null, Finder $finder = null, BehatFormatter $behatFormatter = null)
     {
-        $this->storage_path = storage_path();
+        $this->storage_path = $storage_path;
         $this->behat_folder_base = $this->storage_path . self::BASE_BEHAT_FOLDER;
         $this->fileSystem = ($fileSystem == null) ? new Filesystem() : $fileSystem;
         $this->finder = ($finder == null) ? new Finder() : $finder;
-        $this->behatYml = ($behatYml == null) ? new BehatYml() : $behatYml;
         $this->behatFormatter = ($behatFormatter == null) ? new BehatFormatter() : $behatFormatter;
-        $base_app_path = base_path();
-        $this->bin_path = $base_app_path . '/vendor/bin/';
+        $this->app_path = $app_base;
+        $this->bin_path = $this->app_path . '/vendor/bin/';
     }
 
-    public function loadTestFromProject($hash, $name)
+    public function getProjectHash()
+    {
+        return $this->hash;
+    }
+
+    public function setProjectHash($hash)
+    {
+        $this->hash     = $hash;
+        return $this;
+    }
+
+    public function loadTestFromProject($name)
     {
 
         $this->filename     = $this->replaceDashWithDots($name);
-        $this->path         = $hash;
+        $this->path         = $this->getProjectHash();
         $this->full_path    = $this->behat_folder_base . '/' . $this->path . '/features/';
         $file               = $this->getFileInfo();
-        $content            = $this->plain2html($file['content']);
+        $content            = $file['content'];
         $name               = $file['name'];
         $path               = $this->full_path;
 
@@ -54,6 +76,11 @@ class BehatHelper
         return $this->behatFormatter->plainToHtml($content);
     }
 
+    /**
+     * @param string $filename
+     * @param string $full_path minus filename should end if forward slash
+     * @return array
+     */
     public function getFileInfo($filename = null, $full_path = null)
     {
         $this->filename     = ($filename != null) ? $filename : $this->filename;
@@ -84,76 +111,101 @@ class BehatHelper
         return $this->bin_path;
     }
 
-    public function getBehatYmlPath($project_hash)
+    public function setBaseBinPath($path)
     {
-        return $this->behat_folder_base . '/' . $project_hash . '/behat.yml';
-    }
-
-    public function getFeaturePath($project_hash)
-    {
-        return $this->behat_folder_base . '/' . $project_hash . '/features/bootstrap';
-    }
-
-    public function getBootstrapPath($project_hash)
-    {
-        return $this->behat_folder_base . '/' . $project_hash . '/features/bootstrap';
-    }
-
-    public function getFeaturePathWithFeatureFileName($project_hash)
-    {
-        return $this->behat_folder_base . '/' . $project_hash . '/features/bootstrap/FeatureContext.php';
-    }
-
-    public function getTestPath($project_hash)
-    {
-        return $this->behat_folder_base . '/' . $project_hash . '/features';
-    }
-
-    public function getRootHashFolder($project_hash)
-    {
-        return $this->behat_folder_base . '/' . $project_hash;
-    }
-
-    public function updateYmlFile($project_hash)
-    {
-        $project_root   = $this->getRootHashFolder($project_hash);
-        $feature_root   = $this->getTestPath($project_hash);
-        $bootstrap      = $this->getBootstrapPath($project_hash);
-        $this->behatYml = $this->behatYml->getBehatFile($project_root . '/behat.yml')
-            ->setBootStrapPath($bootstrap)
-            ->setFeaturePath($feature_root)
-            ->writeBehatYmlFiles($project_root . '/behat.yml');
-        return $this->behatYml;
-    }
-
-    public function createPath($hash)
-    {
-        $this->fileSystem->mkdir($this->behat_folder_base . '/' . $hash);
+        $this->bin_path = $path;
         return $this;
     }
 
-    public function delete($hash)
+    public function getBehatYmlPath()
     {
-        if($this->fileSystem->exists($this->getRootHashFolder($hash))) {
-            $this->fileSystem->remove($this->getRootHashFolder($hash));
+        return $this->behatYml_path;
+    }
+
+    public function setBehatYmlPath($path = null)
+    {
+        if($path != null)
+        {
+            $this->behatYml_path = $path;
+        } else {
+            $this->behatYml_path = $this->behat_folder_base . '/' . $this->hash . '/behat.yml';
+        }
+        return $this;
+    }
+
+    public function getBootstrapPath()
+    {
+        return $this->bootstrapPath;
+    }
+
+    public function setBootstrapPath()
+    {
+        $this->bootstrapPath = $this->behat_folder_base . '/' . $this->hash . '/features/bootstrap';
+        return $this;
+    }
+
+    public function getFeaturePathWithFeatureFileName()
+    {
+        return $this->fullPathAndFilenameToFeatureContext;
+    }
+
+    public function setFeaturePathWithFeatureFileName()
+    {
+        $this->fullPathAndFilenameToFeatureContext = $this->behat_folder_base . '/' . $this->hash . '/features/bootstrap/FeatureContext.php';
+        return $this;
+    }
+
+    public function getTestPath()
+    {
+        return $this->testPath;
+    }
+
+    public function setTestPath()
+    {
+        $this->testPath = $this->behat_folder_base . '/' . $this->hash . '/features';
+        return $this;
+    }
+
+    public function getRootHashFolder()
+    {
+        return $this->rootHashFolder;
+    }
+
+    public function setRootHashFolder($path = null)
+    {
+        $this->rootHashFolder = ($path == null) ? $this->behat_folder_base . '/' . $this->getProjectHash() : $path;
+        return $this;
+    }
+
+    public function createPath($path = null)
+    {
+        $path = ($path == null) ? $this->behat_folder_base . '/' . $this->hash : $path;
+        $this->fileSystem->mkdir($path);
+        return $this;
+    }
+
+    public function delete()
+    {
+        if($this->fileSystem->exists($this->getRootHashFolder($this->hash))) {
+            $this->fileSystem->remove($this->getRootHashFolder($this->hash));
         }
     }
 
-    public function copyTemplateFilesOver($hash)
+    public function copyTemplateFilesOver()
     {
-        $this->fileSystem->mirror($this->behat_folder_base . '/template/', $this->behat_folder_base . '/' . $hash);
+        $this->fileSystem->mirror($this->getTemplateFolder() . '/', $this->behat_folder_base . '/' . $this->hash);
         return $this;
     }
 
     public function makeHash()
     {
-        return str_random(64);
+        return $this->generateRandomString();
     }
 
-    public function listProjectFiles($hash)
+    public function listProjectFiles()
     {
         $files = array();
-        foreach($this->finder->files()->name('*.feature')->in($this->behat_folder_base . '/' . $hash . '/features/') as $file) {
+        foreach($this->finder->files()->name('*.feature')->in($this->behat_folder_base . '/' . $this->hash . '/features/') as $file) {
             $files[$file->getFilename()] = array(
                 'name'         => $file->getFilename(),
                 'name_dashed'  => $this->replaceDotsWithDashes($file->getFileName()),
@@ -162,6 +214,17 @@ class BehatHelper
             );
         }
         return $files;
+    }
+
+    public function generateRandomString($length = 32) {
+        return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
+    }
+
+    public function getTemplateFolder()
+    {
+        $current_base           = __DIR__;
+        $this->templateFolder = $current_base . '/template_files';
+        return $this->templateFolder;
     }
 
 }

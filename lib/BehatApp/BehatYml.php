@@ -3,56 +3,80 @@
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Yaml\Yaml;
+use BehatApp\BehatHelper;
 
 class BehatYml {
 
-    protected   $yaml;
+    protected   $yml;
     protected   $finder;
     protected   $filesystem;
     public      $behatYml;
+    public      $behatHelper;
     public      $full_path;
+    public      $helper;
+    public      $ymlPathWithFileName;
+    public      $destination;
 
-    public function __construct(Yaml $yaml = null, Finder $finder = null, Filesystem $filesystem = null)
+    public function __construct(Yaml $yml = null, Finder $finder = null, Filesystem $filesystem = null, BehatHelper $helper)
     {
-        $this->yaml             = ($yaml == null) ? new Yaml : $yaml;
+        $this->yml             = ($yml == null) ? new Yaml : $yml;
         $this->finder           = ($finder == null) ? new Finder : $finder;
         $this->filesystem       = ($filesystem == null) ? new Filesystem : $filesystem;
+        $this->helper           = $helper;
     }
 
-    public function getBehatFile($full_path)
+    public function parseBehatYmlFile()
     {
-        $this->full_path = $full_path;
-        $this->behatYml = $this->yaml->parse($full_path);
+        $this->behatYml = $this->yml->parse($this->ymlPathWithFileName);
         return $this;
     }
 
+    public function getYmlArray()
+    {
+        return $this->behatYml;
+    }
+
+    public function setBehatYmlFileFullPath($full_path_with_file_name)
+    {
+        $this->ymlPathWithFileName = $full_path_with_file_name;
+        return $this;
+    }
+
+    /**
+     * @TODO
+     */
     public function updateBaseUrl()
     {
 
     }
 
-    public function setYml($yml)
-    {
-        $this->behatYml     = $yml;
-        return $this;
-    }
-
-    public function setFeaturePath($full_path)
+    public function setYmlFeaturePath($full_path)
     {
         $this->behatYml['default']['paths']['features'] = $full_path;
         return $this;
     }
 
-    public function setBootStrapPath($full_path)
+    public function setYmlBootStrapPath($full_path)
     {
         $this->behatYml['default']['paths']['bootstrap'] = $full_path;
         return $this;
     }
 
-    public function writeBehatYmlFiles($destination)
+    public function writeBehatYmlFile()
     {
-        $content = $this->yaml->dump($this->behatYml);
-        $this->filesystem->dumpFile($destination, $content);
+        $content = $this->yml->dump($this->behatYml);
+        $this->filesystem->dumpFile($this->destination, $content);
         return $this;
+    }
+
+    public function setDestination($destination)
+    {
+        $this->destination      = $destination;
+        return $this;
+    }
+
+    public function getDestination()
+    {
+        return $this->destination;
     }
 }
