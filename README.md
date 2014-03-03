@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alnutile/behat_editor_core.png?branch=master)](https://travis-ci.org/alnutile/behat_editor_core)
+
 behat_editor_core
 =================
 
