@@ -21,4 +21,28 @@ class BehatFormatter
         }
         return $output;
     }
+
+    public function htmlToPlain($test)
+    {
+        $output = '';
+        $test_to_array = explode("<br>", $test);
+        $count         = 1;
+        foreach($test_to_array as $line) {
+            $string = $this->replaceNbsp($line);
+            $string = ($count < count($test_to_array) - 1) ? $string . "\n" : $string;
+            $count++;
+            $output.= $string;
+        }
+        return $output;
+    }
+
+    public function replaceNbsp($string)
+    {
+        return str_replace('&nbsp;', '', $string);
+    }
+
+    public function replaceBr($string)
+    {
+        return str_replace('<br>', "\n", $string);
+    }
 }
