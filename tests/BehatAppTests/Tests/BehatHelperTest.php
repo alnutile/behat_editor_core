@@ -1,6 +1,7 @@
 <?php namespace BehatAppTests\Tests;
 
 use BehatApp\BehatHelper;
+use Symfony\Component\Filesystem\Filesystem;
 
 class BehatHelperTest extends BehatBaseTests {
 
@@ -11,9 +12,22 @@ class BehatHelperTest extends BehatBaseTests {
         parent::setUp();
     }
 
+    public function tearDown()
+    {
+        parent::tearDown();
+        $files = new Filesystem();
+        if($files->exists($this->destination)) {
+            $files->remove($this->destination);
+        }
+    }
+
     public function testloadTestFromProject()
     {
-        $output = $this->behatHelper->loadTestFromProject('test1.feature');
+        $this->behatHelper
+            ->setProjectHash($this->project->hash)
+            ->setRootHashFolder();
+        $this->destination  = $this->behatHelper->getRootHashFolder();
+        $output             = $this->behatHelper->loadTestFromProject('test1.feature');
         $this->assertEquals('test1.feature', $output['name']);
         $this->assertEquals($this->shouldBe(), $output['content'], "Content does not match the test file");
     }
@@ -23,7 +37,7 @@ class BehatHelperTest extends BehatBaseTests {
         $this->project          = $this->makeProject();
         $this->behatHelper
             ->setProjectHash($this->project->hash)
-            ->createPath($this->getHash())
+            ->createPath()
             ->copyTemplateFilesOver($this->getHash());
         $this->behatYml->writeBehatYmlFile();
         $project = $this->storage_path . '/behat/' . $this->project->hash . '/features/';

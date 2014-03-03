@@ -60,6 +60,7 @@ class BehatBaseTests extends \PHPUnit_Framework_TestCase
         $this->behatHelper->setBehatYmlPath();
         $this->behatYml->setDestination($this->behatHelper->getBehatYmlPath());
         $this->behatYml->writeBehatYmlFile();
+        $this->destination  = $this->behatHelper->getRootHashFolder();
     }
 
     public function makePlainTextTest()

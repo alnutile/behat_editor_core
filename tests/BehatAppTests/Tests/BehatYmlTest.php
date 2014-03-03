@@ -9,7 +9,6 @@ class BehatYmlTest extends BehatBaseTests {
     {
         parent::tearDown();
         $files = new Filesystem();
-        var_dump($this->destination);
         if($files->exists($this->destination)) {
             $files->remove($this->destination);
         }
