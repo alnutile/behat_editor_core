@@ -42,12 +42,10 @@ class BehatYml {
         return $this;
     }
 
-    /**
-     * @TODO
-     */
-    public function updateBaseUrl()
+    public function updateBaseUrl($url)
     {
-
+        $this->behatYml['default']['extensions']["Behat\MinkExtension\Extension"]['base_url'] = $url;
+        return $this;
     }
 
     public function setYmlFeaturePath($full_path)

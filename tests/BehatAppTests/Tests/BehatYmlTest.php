@@ -24,17 +24,27 @@ class BehatYmlTest extends BehatBaseTests {
 
     public function testsetYmlFeaturePath()
     {
-        $behat_yml_path = $this->templateBehatYml;
-        $this->behatYml->setBehatYmlFileFullPath($behat_yml_path);
+        $behat_yml_path     = $this->templateBehatYml;
+        $this->behatYml->setBehatYmlFileFullPath($behat_yml_path)
+            ->parseBehatYmlFile();
         $this->behatYml->setYmlFeaturePath('/test/test');
         $this->assertContains('/test/test', $this->behatYml->getYmlArray()['default']['paths']['features']);
     }
 
+    public function testupdateBaseUrl()
+    {
+        $behat_yml_path = $this->templateBehatYml;
+        $this->behatYml->setBehatYmlFileFullPath($behat_yml_path)
+            ->parseBehatYmlFile();
+        $this->behatYml->updateBaseUrl('http://example.com');
+        $this->assertContains('http://example.com', $this->behatYml->getYmlArray()['default']['extensions']["Behat\MinkExtension\Extension"]['base_url']);
+    }
 
     public function testsetYmlBootStrapPath()
     {
         $behat_yml_path = $this->templateBehatYml;
-        $this->behatYml->setBehatYmlFileFullPath($behat_yml_path);
+        $this->behatYml->setBehatYmlFileFullPath($behat_yml_path)
+            ->parseBehatYmlFile();
         $this->behatYml->setYmlBootStrapPath('/test/test');
         $this->assertContains('/test/test', $this->behatYml->getYmlArray()['default']['paths']['bootstrap']);
     }
@@ -53,5 +63,7 @@ class BehatYmlTest extends BehatBaseTests {
             ->parseBehatYmlFile();
         $this->assertArrayHasKey('default', $new_file->getYmlArray());
     }
+
+
 
 }
