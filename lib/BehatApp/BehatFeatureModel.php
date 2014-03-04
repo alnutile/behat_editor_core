@@ -51,6 +51,16 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         return $files;
     }
 
+    public function update(array $params)
+    {
+        list($content, $destination) = $params;
+        if(!$this->filesystem->exists($destination)) {
+            throw new BehatAppException("File does not exists $destination please use create");
+        } else {
+            $this->filesystem->dumpFile($destination, $content, $mode = 0775);
+        }
+    }
+
     protected function newModel()
     {
         $model = array(
