@@ -80,25 +80,8 @@ class BehatFeatureModelTest extends BehatBaseTests {
 
     public function testShowAll()
     {
-        $content                = $this->model->getNewModel();
-        $content                = implode("\n", $content);
         $root_path              = "/tmp/getAll";
-        if($this->filesystem->exists($root_path)) {
-            $this->filesystem->remove($root_path);
-            $this->filesystem->mkdir($root_path);
-        }
-
-        if(!$this->filesystem->exists($root_path)) {
-            $this->filesystem->mkdir($root_path);
-        }
-        $this->full_path        = "/tmp/getAll/testExists1.feature";
-        $this->full_path2       = "/tmp/getAll/testExists2.feature";
-        $this->full_path3       = "/tmp/getAll/testExists3.feature";
-        $this->full_path4       = "/tmp/getAll/testExists4.feature";
-        $this->model->create([$content, $this->full_path]);
-        $this->model->create([$content, $this->full_path2]);
-        $this->model->create([$content, $this->full_path3]);
-        $this->model->create([$content, $this->full_path4]);
+        $this->createMany($root_path);
         $output                 = $this->model->getAll(array($root_path));
         $this->assertCount(4, $output);
     }
@@ -225,7 +208,31 @@ class BehatFeatureModelTest extends BehatBaseTests {
 
     public function testUpdateAll()
     {
-        //Update an array of items
+        $root_path                  = "/tmp/testUpdate";
+        $this->createMany($root_path);
+        $test_update_content        =   "Test Update";
+        $this->assertFileExists($this->full_path4, "Create many failed so can not run this test");
+        $this->model->updateMany([[$test_update_content, $this->full_path], [$test_update_content, $this->full_path2], [$test_update_content, $this->full_path3], [$test_update_content, $this->full_path4]]);
+        $contentSaved = file_get_contents($this->full_path);
+        $this->assertEquals($contentSaved, $test_update_content, "Update many did not work");
+        $contentSaved = file_get_contents($this->full_path2);
+        $this->assertEquals($contentSaved, $test_update_content, "Update many did not work");
+        $contentSaved = file_get_contents($this->full_path3);
+        $this->assertEquals($contentSaved, $test_update_content, "Update many did not work");
+        $contentSaved = file_get_contents($this->full_path4);
+        $this->assertEquals($contentSaved, $test_update_content, "Update many did not work");
+    }
+
+    public function testDeleteMany()
+    {
+        $root_path     = "/tmp/testDelete";
+        $this->createMany($root_path);
+        $this->assertFileExists($this->full_path4, "Oops setup failed");
+        $this->model->deleteMany([$this->full_path, $this->full_path2, $this->full_path3, $this->full_path4]);
+        $this->assertFileNotExists($this->full_path, "Delete many did not work");
+        $this->assertFileNotExists($this->full_path2, "Delete many did not work");
+        $this->assertFileNotExists($this->full_path3, "Delete many did not work");
+        $this->assertFileNotExists($this->full_path4, "Delete many did not work");
     }
 
     public function testView()
@@ -249,6 +256,28 @@ class BehatFeatureModelTest extends BehatBaseTests {
     public function testfindByTags()
     {
 
+    }
+
+    public function createMany($root_path)
+    {
+        $content                = $this->model->getNewModel();
+        $content                = implode("\n", $content);
+        if($this->filesystem->exists($root_path)) {
+            $this->filesystem->remove($root_path);
+            $this->filesystem->mkdir($root_path);
+        }
+
+        if(!$this->filesystem->exists($root_path)) {
+            $this->filesystem->mkdir($root_path);
+        }
+        $this->full_path        = "$root_path/testExists1.feature";
+        $this->full_path2       = "$root_path/testExists2.feature";
+        $this->full_path3       = "$root_path/testExists3.feature";
+        $this->full_path4       = "$root_path/testExists4.feature";
+        $this->model->create([$content, $this->full_path]);
+        $this->model->create([$content, $this->full_path2]);
+        $this->model->create([$content, $this->full_path3]);
+        $this->model->create([$content, $this->full_path4]);
     }
 
 

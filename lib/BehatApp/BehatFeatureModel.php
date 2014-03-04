@@ -67,6 +67,14 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         }
     }
 
+    public function updateMany(array $files_and_path)
+    {
+        foreach($files_and_path as $file_and_path){
+            $this->update($file_and_path);
+        }
+    }
+
+
     public function delete($folder_path)
     {
         $filename   = explode('/', $folder_path);
@@ -84,6 +92,13 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
             catch(IOException $e) {
                 throw new BehatAppException("Can not remove file due to permissions {$e->getMessage()}");
             }
+        }
+    }
+
+    public function deleteMany(array $files_and_path)
+    {
+        foreach($files_and_path as $file_and_path){
+            $this->delete($file_and_path);
         }
     }
 
