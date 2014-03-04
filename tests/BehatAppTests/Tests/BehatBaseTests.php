@@ -4,6 +4,7 @@ use Symfony\Component\Finder\Finder;
 use Symfony\Component\Filesystem\Filesystem;
 use BehatApp\BehatHelper;
 use BehatApp\BehatYml;
+use BehatApp\BehatFeatureModel;
 use Symfony\Component\Yaml\Yaml;
 use BehatApp\BehatFormatter;
 
@@ -20,6 +21,9 @@ class BehatBaseTests extends \PHPUnit_Framework_TestCase
     public $storage_path;
     public $templateFiles;
     public $templateBehatYml;
+    public $model;
+    public $filesystem;
+    public $finder;
 
     public function __construct()
     {
@@ -52,8 +56,11 @@ class BehatBaseTests extends \PHPUnit_Framework_TestCase
         $this->storage_path     = $this->app_base . '/storage';
         $this->formatter        = new BehatFormatter();
         $this->behatHelper      = new BehatHelper($this->storage_path, $this->app_base);
+        $this->model            = new BehatFeatureModel();
         $this->behatYml         = new BehatYml(null, null, null, $this->behatHelper);
         $this->yaml             = new Yaml();
+        $this->filesystem       = new Filesystem();
+        $this->finder           = new Finder();
         $this->project          = $this->makeProject();
         $this->behatHelper->setProjectHash($this->project->hash)->createPath()
             ->copyTemplateFilesOver();
