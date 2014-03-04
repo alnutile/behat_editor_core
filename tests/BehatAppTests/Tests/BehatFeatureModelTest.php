@@ -8,13 +8,19 @@ class BehatFeatureModelTest extends BehatBaseTests {
     protected  $full_path;
     protected $full_path_updated;
     protected $full_path_delete;
+    protected $full_path_create;
 
+    /**
+     * Why did I have so many paths?
+     * Get VFS working had issue with tmp to vfs using Filesystem
+     */
     public function setUp()
     {
         parent::setUp();
-        $this->root             = vfsStream::setup('destination');
-        $this->full_path_delete = '/tmp/testDelete';
-        $this->full_path_updated = "/tmp/testUpdate/";
+        $this->root                 = vfsStream::setup('destination');
+        $this->full_path_delete     = '/tmp/testDelete';
+        $this->full_path_updated    = "/tmp/testUpdate/";
+        $this->full_path_create     = "/tmp/testCreate/";
         if($this->filesystem->exists($this->full_path)) {
             $this->filesystem->remove($this->full_path);
         }
@@ -38,20 +44,26 @@ class BehatFeatureModelTest extends BehatBaseTests {
             $this->filesystem->chmod($this->full_path_delete, $mode = 0777, $umask = 0000, TRUE);
             $this->filesystem->remove($this->full_path_delete);
         }
+        if($this->filesystem->exists($this->full_path_create)) {
+            $this->filesystem->chmod($this->full_path_create, $mode = 0777, $umask = 0000, TRUE);
+            $this->filesystem->remove($this->full_path_create);
+        }
     }
 
     public function testNewModel()
     {
         $shouldBe   = $this->model->getNewModel();
-        $this->assertEquals('Feature: Your Feature Here', $shouldBe[1]);
+        $this->assertEquals('Feature: Your Test Name Here', $shouldBe[1]);
     }
 
     public function testCreate()
     {
+        $path = "/tmp/testCreate.feature";
+
         $content = $this->model->getNewModel();
         $content = implode("\n", $content);
 
-        $this->full_path = "/tmp/testCreate.feature";
+        $this->full_path = $path;
         if($this->filesystem->exists($this->full_path)) {
             $this->filesystem->remove($this->full_path);
         }
@@ -110,11 +122,11 @@ class BehatFeatureModelTest extends BehatBaseTests {
         $this->assertFalse($this->filesystem->exists($this->full_path_updated));
 
         $this->model->create([$content, $this->full_path_updated]);
-        $content = str_replace('Your Feature Here', 'Your Feature Updated', $content);
+        $content = str_replace('Your Test Name Here', 'Your Test is Updated', $content);
 
         $this->model->update([$content, $this->full_path_updated]);
         $contentSaved = file_get_contents($this->full_path_updated);
-        $this->assertContains('Your Feature Updated', $contentSaved, "File not updated");
+        $this->assertContains('Your Test is Updated', $contentSaved, "File not updated");
     }
 
     /**
@@ -210,7 +222,7 @@ class BehatFeatureModelTest extends BehatBaseTests {
     {
         $root_path                  = "/tmp/testUpdate";
         $this->createMany($root_path);
-        $test_update_content        =   "Test Update";
+        $test_update_content        =   "Test Update Feature Scenario Given I am";
         $this->assertFileExists($this->full_path4, "Create many failed so can not run this test");
         $this->model->updateMany([[$test_update_content, $this->full_path], [$test_update_content, $this->full_path2], [$test_update_content, $this->full_path3], [$test_update_content, $this->full_path4]]);
         $contentSaved = file_get_contents($this->full_path);
@@ -225,7 +237,7 @@ class BehatFeatureModelTest extends BehatBaseTests {
 
     public function testDeleteMany()
     {
-        $root_path     = "/tmp/testDelete";
+        $root_path              = "/tmp/testDelete";
         $this->createMany($root_path);
         $this->assertFileExists($this->full_path4, "Oops setup failed");
         $this->model->deleteMany([$this->full_path, $this->full_path2, $this->full_path3, $this->full_path4]);
@@ -235,30 +247,131 @@ class BehatFeatureModelTest extends BehatBaseTests {
         $this->assertFileNotExists($this->full_path4, "Delete many did not work");
     }
 
-    public function testView()
+    public function testFind()
+    {
+        $path                   = $this->full_path_create;
+        $content                = $this->model->getNewModel();
+        $content                = implode("\n", $content);
+        $this->model->create([$content, $path . "test1.feature"]);
+        $this->assertFileExists($path . "test1.feature", "File not there can not test view");
+        $found                  = $this->model->get([$path, "test1.feature"]);
+        $this->assertCount(1, $found);
+        foreach($found as $file) {
+            $this->assertEquals("test1.feature", $file->getFilename());
+        }
+    }
+
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testViewFailDirNotFound()
+    {
+        $path                   = $this->full_path_create;
+        $found                  = $this->model->get([$path, "test1.feature"]);
+    }
+
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testViewFailFileNotFound()
+    {
+        $path                   = $this->full_path_create;
+        $this->filesystem->mkdir($path);
+        $found                  = $this->model->get([$path, "NOTTHERE.feature"]);
+    }
+
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testFailGetNonFeatureFile()
+    {
+        $path                   = $this->full_path_create;
+        $this->filesystem->mkdir($path);
+        $found                  = $this->model->get([$path, "test1.TEST"]);
+    }
+
+    public function testfindByTag()
+    {
+        $this->createMany($this->full_path_create);
+        $found                  = $this->model->findByTag([$this->full_path_create, "@example"]);
+        $this->assertCount(4, $found);
+    }
+
+
+    public function testfindByTagOnly3()
+    {
+        $this->createMany($this->full_path_create);
+        $found                  = $this->model->findByTag([$this->full_path_create, "@example"]);
+        file_put_contents($this->full_path2, "Nothing here to see");
+        $this->assertCount(3, $found);
+    }
+
+    public function testfindByTagOnly4IgnoringFileWithNoFeatureName()
+    {
+        $this->createMany($this->full_path_create);
+        $found                  = $this->model->findByTag([$this->full_path_create, "@example"]);
+        file_put_contents($this->full_path_create . '/testNOTHERE', "Nothing here to see");
+        $this->assertCount(4, $found);
+    }
+
+    /**
+     * multiple tags
+     */
+    public function testFindByTags()
     {
 
     }
 
-    public function testValidation()
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testValidationTextGivenIAmOnFail()
     {
-        //1. Must have feature
-        //2. Must have scenario
-        //3. Feature above scenario
-        //4. Must have Given I am
+        $content_bad                = "Feature Scenario";
+        $this->model->validate($content_bad);
     }
 
-    public function testfindByName()
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testValidationTextFeatureFail()
     {
-
+        $content_bad                = "Test Test";
+        $this->model->validate($content_bad);
     }
 
-    public function testfindByTags()
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testValidationTextFeatureFailMoreThanOneFeature()
     {
-
+        $content_bad                = "Feature Feature Scenario Test Test";
+        $this->model->validate($content_bad);
     }
 
-    public function createMany($root_path)
+    public function testValidationTextFeaturePass()
+    {
+        $content_good               = $this->makePlainTextTest();
+        $this->assertFalse($this->model->validate($content_good));
+    }
+
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testValidationTextScenarioFail()
+    {
+        $content_good               = $this->makePlainTextTest();
+        $content_bad                = "Feature Test Test";
+        $this->model->validate($content_bad);
+    }
+
+    public function testValidationTextScenarioPass()
+    {
+        $content_good               = $this->makePlainTextTest();
+        $this->model->validate($content_good);
+    }
+
+    protected function createMany($root_path)
     {
         $content                = $this->model->getNewModel();
         $content                = implode("\n", $content);

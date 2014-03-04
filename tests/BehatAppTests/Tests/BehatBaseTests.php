@@ -73,6 +73,7 @@ class BehatBaseTests extends \PHPUnit_Framework_TestCase
     public function makePlainTextTest()
     {
         $test = <<<HEREDOC
+@example
 Feature: ls
   Scenario: List files in directory
     Given I am in a directory "tmp"
@@ -91,7 +92,7 @@ HEREDOC;
     public function makeHtmlTestOutput()
     {
         $out = <<<HEREDOC
-Feature: ls<br>&nbsp;&nbsp;  Scenario: List files in directory<br>&nbsp;&nbsp;&nbsp;&nbsp;    Given I am in a directory "tmp"<br>&nbsp;&nbsp;&nbsp;&nbsp;    And I have a file named "foo"<br>&nbsp;&nbsp;&nbsp;&nbsp;    And I have a file named "bar"<br>&nbsp;&nbsp;&nbsp;&nbsp;    When I run "ls"<br>&nbsp;&nbsp;&nbsp;&nbsp;    Then I should get:<br>&nbsp;&nbsp;&nbsp;&nbsp;    """<br>&nbsp;&nbsp;&nbsp;&nbsp;    bar<br>&nbsp;&nbsp;&nbsp;&nbsp;    foo<br>&nbsp;&nbsp;&nbsp;&nbsp;    """<br>
+@example<br>Feature: ls<br>&nbsp;&nbsp;  Scenario: List files in directory<br>&nbsp;&nbsp;&nbsp;&nbsp;    Given I am in a directory "tmp"<br>&nbsp;&nbsp;&nbsp;&nbsp;    And I have a file named "foo"<br>&nbsp;&nbsp;&nbsp;&nbsp;    And I have a file named "bar"<br>&nbsp;&nbsp;&nbsp;&nbsp;    When I run "ls"<br>&nbsp;&nbsp;&nbsp;&nbsp;    Then I should get:<br>&nbsp;&nbsp;&nbsp;&nbsp;    """<br>&nbsp;&nbsp;&nbsp;&nbsp;    bar<br>&nbsp;&nbsp;&nbsp;&nbsp;    foo<br>&nbsp;&nbsp;&nbsp;&nbsp;    """<br>
 HEREDOC;
         return $out;
     }

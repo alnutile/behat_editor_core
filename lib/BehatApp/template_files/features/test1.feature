@@ -1,3 +1,4 @@
+@example
 Feature: ls
   Scenario: List files in directory
     Given I am in a directory "tmp"

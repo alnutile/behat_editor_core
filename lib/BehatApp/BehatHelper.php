@@ -227,4 +227,9 @@ class BehatHelper
         return $this->templateFolder;
     }
 
+    public function check_slash($full_path)
+    {
+        $full_path = (substr($full_path, -1) !== '/') ? $full_path . '/' : $full_path;
+        return $full_path;
+    }
 }

@@ -1,6 +1,7 @@
 <?php namespace BehatApp;
 
 use BehatApp\Exceptions\BehatAppException;
+use BehatApp\BehatHelper;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Filesystem\Exception\IOException;
@@ -16,6 +17,7 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         $this->model        = $this->newModel();
         $this->finder       = ($finder == null) ? new Finder() : $finder;
         $this->filesystem   = ($filesystem == null) ? new Filesystem() : $filesystem;
+        $this->helper       = new BehatHelper(null, null);
     }
 
     public function getNewModel()
@@ -33,6 +35,7 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         if($this->filesystem->exists($destination)) {
             throw new BehatAppException("File already exists $destination");
         } else {
+            $this->validate($content);
             $this->filesystem->dumpFile($destination, $content, $mode = 0775);
         }
     }
@@ -55,6 +58,7 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
     public function update(array $params)
     {
         list($content, $destination) = $params;
+        $this->validate($content);
         if(!$this->filesystem->exists($destination)) {
             throw new BehatAppException("File does not exists $destination please use create");
         } else {
@@ -102,6 +106,69 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         }
     }
 
+    /**
+     * @param array $params
+     * @return \Symfony\Component\Finder\Finder
+     * @throws Exceptions\BehatAppException
+     */
+    public function get(array $params) {
+        list($full_path, $file_name)= $params;
+
+        $this->fileCheckException($file_name);
+
+        $full_path                  = $this->helper->check_slash($full_path);
+        $this->notFoundException($full_path . $file_name);
+        try {
+            $output = $this->finder->files()
+                ->in($full_path)
+                ->name($file_name);
+        }
+        catch(InvalidArgumentException $e) {
+            throw new BehatAppException("Directory or file not found {$e->getMessage()}");
+        }
+        return $output;
+    }
+
+    public function findByTag($params)
+    {
+        list($full_path, $tag)      = $params;
+        $full_path                  = $this->helper->check_slash($full_path);
+        $this->notFoundException($full_path);
+        $output                     = $this->finder->files()
+                                        ->in($full_path)
+                                        ->contains($tag)
+                                        ->name('*.feature');
+        return $output;
+    }
+
+    public function validate($text)
+    {
+        if(strpos($text, 'Feature') === FALSE) {
+            throw new BehatAppException("Missing Feature $text");
+        }
+
+        if(substr_count($text, "Feature") > 1) {
+            throw new BehatAppException("Feature is in test more than once $text");
+        }
+
+        if(strpos($text, 'Scenario') === FALSE) {
+            throw new BehatAppException("Missing Scenario $text");
+        }
+
+        if(strpos($text, 'Given I am') === FALSE) {
+            throw new BehatAppException("Missing Given I am on $text");
+        }
+
+        return FALSE;
+    }
+
+    protected function notFoundException($full_path)
+    {
+        if(!$this->filesystem->exists($full_path)) {
+            throw new BehatAppException("File not found {$full_path}");
+        }
+    }
+
     protected function featureFileCheck($filename)
     {
         $filename   = explode('.', $filename);
@@ -109,11 +176,18 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         return TRUE;
     }
 
+    protected function fileCheckException($file_name)
+    {
+        if(!$this->featureFileCheck($file_name)) {
+            throw new BehatAppException("Can only find .feature files");
+        }
+    }
+
     protected function newModel()
     {
         $model = array(
             '@example',
-            'Feature: Your Feature Here',
+            'Feature: Your Test Name Here',
             '  Scenario: Your First Scenario',
             '    Given I am on "/"',
             '    Then I should see "test"'
