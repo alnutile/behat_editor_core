@@ -23,7 +23,8 @@ class BehatFeatureModelTest extends BehatBaseTests {
         if($this->filesystem->exists($this->full_path)) {
             $this->filesystem->remove($this->full_path);
         }
-        $this->full_path_updated = "/tmp/testUpdate/test1.feature";
+
+        $this->full_path_updated = "/tmp/testUpdate/";
         if($this->filesystem->exists($this->full_path_updated)) {
             $this->filesystem->remove($this->full_path_updated);
         }
@@ -129,7 +130,7 @@ class BehatFeatureModelTest extends BehatBaseTests {
     public function testUpdateFail()
     {
         $this->full_path_updated = "/tmp/testUpdate/testFail.feature";
-        $this->model->create(["Test Test", $this->full_path_updated]);
+        $this->model->update(["Test Test", $this->full_path_updated]);
     }
 
     public function testDelete()
