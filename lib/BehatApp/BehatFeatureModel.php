@@ -3,6 +3,7 @@
 use BehatApp\Exceptions\BehatAppException;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Filesystem\Exception\IOException;
 
 class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
 
@@ -57,8 +58,40 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         if(!$this->filesystem->exists($destination)) {
             throw new BehatAppException("File does not exists $destination please use create");
         } else {
-            $this->filesystem->dumpFile($destination, $content, $mode = 0775);
+            try {
+                $this->filesystem->dumpFile($destination, $content, $mode = 0775);
+            }
+            catch(IOException $e) {
+                throw new BehatAppException("Can not update the file {$e->getMessage()}");
+            }
         }
+    }
+
+    public function delete($folder_path)
+    {
+        $filename   = explode('/', $folder_path);
+        $filename   = array_slice($filename, -1);
+        $filename   = $filename[0];
+
+        if(!$this->filesystem->exists($folder_path)) {
+            throw new BehatAppException("File does not exists $folder_path please use create");
+        } elseif(!$this->featureFileCheck($filename)) {
+            throw new BehatAppException("File is not a feature file I can not delete it.");
+        } else {
+            try {
+                $this->filesystem->remove($folder_path);
+            }
+            catch(IOException $e) {
+                throw new BehatAppException("Can not remove file due to permissions {$e->getMessage()}");
+            }
+        }
+    }
+
+    protected function featureFileCheck($filename)
+    {
+        $filename   = explode('.', $filename);
+        if($filename[1] != 'feature') return FALSE;
+        return TRUE;
     }
 
     protected function newModel()

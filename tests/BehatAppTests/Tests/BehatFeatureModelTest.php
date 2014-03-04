@@ -7,14 +7,18 @@ class BehatFeatureModelTest extends BehatBaseTests {
 
     protected  $full_path;
     protected $full_path_updated;
+    protected $full_path_delete;
 
     public function setUp()
     {
         parent::setUp();
-        $this->root         = vfsStream::setup('destination');
+        $this->root             = vfsStream::setup('destination');
+        $this->full_path_delete = '/tmp/testDelete';
+        $this->full_path_updated = "/tmp/testUpdate/";
         if($this->filesystem->exists($this->full_path)) {
             $this->filesystem->remove($this->full_path);
         }
+
     }
 
     public function tearDown()
@@ -26,7 +30,13 @@ class BehatFeatureModelTest extends BehatBaseTests {
 
         $this->full_path_updated = "/tmp/testUpdate/";
         if($this->filesystem->exists($this->full_path_updated)) {
+            $this->filesystem->chmod($this->full_path_updated, $mode = 0777, $umask = 0000, TRUE);
             $this->filesystem->remove($this->full_path_updated);
+        }
+
+        if($this->filesystem->exists($this->full_path_delete)) {
+            $this->filesystem->chmod($this->full_path_delete, $mode = 0777, $umask = 0000, TRUE);
+            $this->filesystem->remove($this->full_path_delete);
         }
     }
 
@@ -127,15 +137,95 @@ class BehatFeatureModelTest extends BehatBaseTests {
     /**
      * @expectedException BehatApp\Exceptions\BehatAppException
      */
-    public function testUpdateFail()
+    public function testUpdateFailDoesNotExist()
     {
         $this->full_path_updated = "/tmp/testUpdate/testFail.feature";
         $this->model->update(["Test Test", $this->full_path_updated]);
     }
 
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testUpdateFailCanNotWrite()
+    {
+        $this->full_path_updated = "/tmp/testUpdate";
+        if(!$this->filesystem->exists($this->full_path_updated)) {
+            $this->filesystem->mkdir($this->full_path_updated, $mode = 0777);
+        } else {
+            $this->filesystem->chmod($this->full_path_updated, $mode = 0777);
+        }
+        $this->filesystem->dumpFile($this->full_path_updated . '/test1.feature', "Test Delete", $mode = 0444);
+        $this->filesystem->chmod($this->full_path_updated, $mode = 0555, $umask = 0000, TRUE);
+        $this->assertFileExists($this->full_path_updated . '/test1.feature', "File not there");
+        $this->model->update(["Test Test", $this->full_path_updated . '/test1.feature']);
+    }
+
     public function testDelete()
     {
+        $content = $this->model->getNewModel();
+        $content = implode("\n", $content);
+        $this->full_path_delete = "/tmp/testDelete";
+        if(!$this->filesystem->exists($this->full_path_delete)) {
+            $this->filesystem->mkdir($this->full_path_delete);
+        }
+        $this->model->create([$content, $this->full_path_delete . '/test1.feature']);
+        $this->assertFileExists($this->full_path_delete . '/test1.feature', "File not there");
+        $this->model->delete($this->full_path_delete . '/test1.feature');
+        $this->assertFileNotExists($this->full_path_delete . '/test1.feature', "File still there");
+    }
 
+
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testDeleteErrorFileNotFeature()
+    {
+        $this->full_path_delete = "/tmp/testDelete";
+        if(!$this->filesystem->exists($this->full_path_delete)) {
+            $this->filesystem->mkdir($this->full_path_delete);
+        }
+        $this->filesystem->dumpFile($this->full_path_delete . '/test1.featureTEST', "Test Delete");
+        $this->assertFileExists($this->full_path_delete . '/test1.featureTEST', "File not there");
+        $this->model->delete($this->full_path_delete . '/test1.featureTEST');
+    }
+
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testDeleteErrorNoPermissionsToWriteToFolder()
+    {
+        $this->full_path_delete = "/tmp/testDelete";
+        if(!$this->filesystem->exists($this->full_path_delete)) {
+            $this->filesystem->mkdir($this->full_path_delete, $mode = 0777);
+        } else {
+            $this->filesystem->chmod($this->full_path_delete, $mode = 0777);
+        }
+        $this->filesystem->dumpFile($this->full_path_delete . '/test1.feature', "Test Delete");
+        $this->assertFileExists($this->full_path_delete . '/test1.feature', "File not there");
+        $this->filesystem->chmod($this->full_path_delete, $mode = 0555, $umask = 0000, $recursive = TRUE);
+        $this->model->delete($this->full_path_delete . '/test1.feature');
+    }
+
+    /**
+     * @expectedException BehatApp\Exceptions\BehatAppException
+     */
+    public function testDeleteErrorNoPermissionsToWriteToDeleteFile()
+    {
+        $this->full_path_delete = "/tmp/testDelete";
+        if(!$this->filesystem->exists($this->full_path_delete)) {
+            $this->filesystem->mkdir($this->full_path_delete, $mode = 0777);
+        } else {
+            $this->filesystem->chmod($this->full_path_delete, $mode = 0777);
+        }
+        $this->filesystem->dumpFile($this->full_path_delete . '/test1.feature', "Test Delete", $mode = 0444);
+        $this->filesystem->chmod($this->full_path_delete, $mode = 0555, $umask = 0000, TRUE);
+        $this->assertFileExists($this->full_path_delete . '/test1.feature', "File not there");
+        $this->model->delete($this->full_path_delete . '/test1.feature');
+    }
+
+    public function testUpdateAll()
+    {
+        //Update an array of items
     }
 
     public function testView()
