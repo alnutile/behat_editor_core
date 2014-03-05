@@ -1,0 +1,20 @@
+default:
+  paths:
+    features:  vendor/alnutile/behat-wrapper/test/features
+    bootstrap: vendor/alnutile/behat-wrapper/test/features/bootstrap
+  formatter:
+    name: html
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte: null
+      selenium2: null
+      base_url: 'http://localhost:8000'
+      browser_name: safari
+
+annotations:
+  paths:
+    features: features/annotations
+
+closures:
+  paths:
+    features: features/closures

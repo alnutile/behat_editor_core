@@ -16,16 +16,15 @@ class BehatYmlTest extends BehatBaseTests {
 
     public function testgetBehatYmlFile()
     {
-        $behat_yml = $this->templateBehatYml;
-        $this->behatYml->setBehatYmlFileFullPath($behat_yml);
-        $output = $this->behatYml->parseBehatYmlFile();
-        $this->assertArrayHasKey('default', $output->behatYml);
+        $this->assertFileExists($this->testBehatYmlFile, "Setup did not set tmp yml file");
+        $this->behatYml->setBehatYmlFileFullPath($this->testBehatYmlFile);
+        $output = $this->behatYml->parseBehatYmlFile()->getYmlArray();
+        $this->assertArrayHasKey('default', $output);
     }
 
     public function testsetYmlFeaturePath()
     {
-        $behat_yml_path     = $this->templateBehatYml;
-        $this->behatYml->setBehatYmlFileFullPath($behat_yml_path)
+        $this->behatYml->setBehatYmlFileFullPath($this->testBehatYmlFile)
             ->parseBehatYmlFile();
         $this->behatYml->setYmlFeaturePath('/test/test');
         $this->assertContains('/test/test', $this->behatYml->getYmlArray()['default']['paths']['features']);
@@ -33,8 +32,7 @@ class BehatYmlTest extends BehatBaseTests {
 
     public function testupdateBaseUrl()
     {
-        $behat_yml_path = $this->templateBehatYml;
-        $this->behatYml->setBehatYmlFileFullPath($behat_yml_path)
+        $this->behatYml->setBehatYmlFileFullPath($this->testBehatYmlFile)
             ->parseBehatYmlFile();
         $this->behatYml->updateBaseUrl('http://example.com');
         $this->assertContains('http://example.com', $this->behatYml->getYmlArray()['default']['extensions']["Behat\MinkExtension\Extension"]['base_url']);
@@ -42,8 +40,7 @@ class BehatYmlTest extends BehatBaseTests {
 
     public function testsetYmlBootStrapPath()
     {
-        $behat_yml_path = $this->templateBehatYml;
-        $this->behatYml->setBehatYmlFileFullPath($behat_yml_path)
+        $this->behatYml->setBehatYmlFileFullPath($this->testBehatYmlFile)
             ->parseBehatYmlFile();
         $this->behatYml->setYmlBootStrapPath('/test/test');
         $this->assertContains('/test/test', $this->behatYml->getYmlArray()['default']['paths']['bootstrap']);
@@ -52,8 +49,7 @@ class BehatYmlTest extends BehatBaseTests {
     public function testwriteBehatYmlFiles()
     {
         $timestamp          = time();
-        $behat_yml_path     = $this->templateBehatYml;
-        $this->behatYml->setBehatYmlFileFullPath($behat_yml_path)
+        $this->behatYml->setBehatYmlFileFullPath($this->testBehatYmlFile)
             ->parseBehatYmlFile();
         $this->destination        = "/tmp/behat_yml_" . $timestamp . ".yml";
         $this->behatYml->setDestination($this->destination);
