@@ -21,31 +21,6 @@ class BehatHelperTest extends BehatBaseTests {
         }
     }
 
-    public function testloadTestFromProject()
-    {
-        $this->behatHelper
-            ->setProjectHash($this->project->hash)
-            ->setRootHashFolder();
-        $this->destination  = $this->behatHelper->getRootHashFolder();
-        $output             = $this->behatHelper->loadTestFromProject('test1.feature');
-        $this->assertEquals('test1.feature', $output['name']);
-        $this->assertEquals($this->shouldBe(), $output['content'], "Content does not match the test file");
-    }
-
-    public function testgetFileInfo()
-    {
-        $this->project          = $this->makeProject();
-        $this->behatHelper
-            ->setProjectHash($this->project->hash)
-            ->createPath()
-            ->copyTemplateFilesOver($this->getHash());
-        $this->behatYml->writeBehatYmlFile();
-        $project = $this->storage_path . '/behat/' . $this->project->hash . '/features/';
-        $output = $this->behatHelper->getFileInfo('test1.feature', $project);
-        $this->assertEquals('test1.feature', $output['name']);
-        $this->assertEquals($this->shouldBe(), $output['content'], "Content does not match the test file");
-    }
-
     public function testreplaceDashWithDots()
     {
         $filename_should_be     = "test1.feature";
@@ -58,17 +33,11 @@ class BehatHelperTest extends BehatBaseTests {
         $this->assertEquals($filename_should_be, $this->behatHelper->replaceDotsWithDashes('test1.feature'));
     }
 
-    public function testgetBaseBinPath()
-    {
-        $should_be = $this->app_base . '/vendor/bin/';
-        $this->assertEquals($should_be, $this->behatHelper->getBaseBinPath());
-    }
-
     public function testgetBaseYmlPath()
     {
         $this->project          = $this->makeProject();
-        $this->behatHelper->setProjectHash($this->project->hash)->setBehatYmlPath();
         $shouldBe               = $this->storage_path . '/behat/' . $this->project->hash . '/behat.yml';
+        $this->behatHelper->setBehatYmlPath($shouldBe);
         $this->assertEquals($shouldBe, $this->behatHelper->getBehatYmlPath($this->project->hash));
     }
 
@@ -76,7 +45,7 @@ class BehatHelperTest extends BehatBaseTests {
     {
         $this->project          = $this->makeProject();
         $shouldBe               = $this->storage_path . '/behat/' . $this->project->hash . '/features/bootstrap';
-        $this->behatHelper->setProjectHash($this->project->hash)->setBootstrapPath();
+        $this->behatHelper->setBootstrapPath($shouldBe);
         $this->assertEquals($shouldBe, $this->behatHelper->getBootstrapPath());
     }
 
@@ -84,24 +53,109 @@ class BehatHelperTest extends BehatBaseTests {
     {
         $this->project          = $this->makeProject();
         $shouldBe               = $this->storage_path . '/behat/' . $this->project->hash . '/features/bootstrap/FeatureContext.php';
-        $this->behatHelper->setProjectHash($this->project->hash)->setFeaturePathWithFeatureFileName();
+        $this->behatHelper->setFeaturePathWithFeatureFileName($shouldBe);
         $this->assertEquals($shouldBe, $this->behatHelper->getFeaturePathWithFeatureFileName());
+    }
+
+    public function testGetAppPathDefault()
+    {
+        $this->assertEquals($this->app_base, $this->behatHelper->getAppPath());
+    }
+
+    public function testSetAppPath()
+    {
+        $tmp                = "/tmp/foo";
+        $this->behatHelper->setAppPath($tmp);
+        $this->assertEquals($tmp, $this->behatHelper->getAppPath());
+    }
+
+    public function testGetStoragePathDefault()
+    {
+        $this->assertEquals($this->storage_path, $this->behatHelper->getStoragePath());
+    }
+
+    public function testSetStoragePathDefault()
+    {
+        $tmp                = "/tmp/foo";
+        $this->behatHelper->setStoragePath($tmp);
+        $this->assertEquals($tmp, $this->behatHelper->getStoragePath());
+    }
+
+    public function testGetYmlPathDefault()
+    {
+        $this->assertEquals($this->templateBehatYml, $this->behatHelper->getBehatYmlPath());
+    }
+
+    public function testGetBootstrapPathDefault()
+    {
+        $boot               = $this->behatHelper->getBasePath() . '/features/bootstrap/';
+        $this->assertEquals($boot, $this->behatHelper->getBootstrapPath());
+    }
+
+    public function testgetFeaturePathWithFeatureFileNameDefault()
+    {
+        $boot               = $this->behatHelper->getBasePath() .  '/features/bootstrap/FeatureContext.php';
+        $this->assertEquals($boot, $this->behatHelper->getFeaturePathWithFeatureFileName());
     }
 
     public function testgetTestPath()
     {
-        $this->project          = $this->makeProject();
-        $shouldBe               = $this->storage_path . '/behat/' . $this->project->hash . '/features';
-        $this->behatHelper->setProjectHash($this->project->hash)->setTestPath();
-        $this->assertEquals($shouldBe, $this->behatHelper->getTestPath());
+        $this->assertNotNull($this->behatHelper->getTestPath());
     }
 
-    public function testgetRootHashFolder()
+    public function testgetTestPathDefault()
     {
-        $this->project          = $this->makeProject();
-        $shouldBe               = $this->storage_path . '/behat/' . $this->project->hash;
-        $this->behatHelper->setProjectHash($this->project->hash);
-        $this->behatHelper->setRootHashFolder();
-        $this->assertEquals($shouldBe, $this->behatHelper->getRootHashFolder());
+        $tests               = $this->behatHelper->getBasePath() .  '/features';
+        $this->assertEquals($tests, $this->behatHelper->getTestPath());
     }
+
+    public function testsetTestPath()
+    {
+        $tmp                = "/tmp/tests";
+        $this->behatHelper->setTestPath($tmp);
+        $this->assertEquals($tmp, $this->behatHelper->getTestPath());
+    }
+
+    public function testTemplateFolderDefaults()
+    {
+        $def                = $this->behatHelper->getAppPath() . '/lib/BehatApp/template_files/';
+        $this->assertEquals($def, $this->behatHelper->getTemplateFolder());
+    }
+
+    public function testcopyTemplateFilesOver()
+    {
+        $dest           = '/tmp/testTemplateCopy';
+        $this->behatHelper->copyTemplateFilesOver($dest);
+        $this->assertFileExists($dest . '/features/test1.feature', "Template files where not copied over");
+    }
+
+    /**
+     * @expectedException PHPUnit_Framework_Error_Warning
+     */
+    public function testcopyTemplateFilesOverWriteError()
+    {
+        $dest                           = '/tmp/testTemplateCopy';
+        $this->filesystem->chmod($dest, 0444);
+        $this->behatHelper->copyTemplateFilesOver($dest);
+    }
+
+    public function testcopyTemplateFilesOverNotThereError()
+    {
+
+    }
+
+    public function testSetBasePath()
+    {
+        $tmp            = '/tmp/basePath';
+        $this->behatHelper->setBasePath($tmp);
+        $this->assertEquals($tmp, $this->behatHelper->getBasePath());
+    }
+
+    public function testSetBasePathDefault()
+    {
+        $shouldBe = $this->behatHelper->getAppPath() . '/storage/default/';
+        $this->behatHelper->setBasePath();
+        $this->assertEquals($shouldBe, $this->behatHelper->getBasePath());
+    }
+
 }

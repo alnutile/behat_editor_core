@@ -19,10 +19,10 @@ class BehatYml {
 
     public function __construct(Yaml $yml = null, Finder $finder = null, Filesystem $filesystem = null, BehatHelper $helper)
     {
-        $this->yml             = ($yml == null) ? new Yaml : $yml;
+        $this->yml              = ($yml == null) ? new Yaml : $yml;
         $this->finder           = ($finder == null) ? new Finder : $finder;
         $this->filesystem       = ($filesystem == null) ? new Filesystem : $filesystem;
-        $this->helper           = $helper;
+        $this->helper           = ($helper == null) ? new BehatHelper : $helper;;
     }
 
     public function parseBehatYmlFile()

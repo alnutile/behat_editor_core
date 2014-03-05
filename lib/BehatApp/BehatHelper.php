@@ -4,6 +4,7 @@
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use BehatApp\BehatFeatureContextUpdate;
+use BehatApp\Exceptions\BehatAppException;
 
 /**
  * See related tests for examples and docs
@@ -26,6 +27,7 @@ class BehatHelper
     public $bin_path;
     public $results;
     public $app_path;
+    public $base_path;
     public $behatYml;
     public $behatYml_path;
     public $templateFolder;
@@ -35,65 +37,79 @@ class BehatHelper
     public $rootHashFolder;
     public $hash;
 
-    public function __construct($storage_path, $app_base, Filesystem $fileSystem = null, Finder $finder = null, BehatFormatter $behatFormatter = null)
+    public function __construct(Filesystem $fileSystem = null, Finder $finder = null)
     {
-        $this->storage_path = $storage_path;
-        $this->behat_folder_base = $this->storage_path . self::BASE_BEHAT_FOLDER;
-        $this->fileSystem = ($fileSystem == null) ? new Filesystem() : $fileSystem;
-        $this->finder = ($finder == null) ? new Finder() : $finder;
-        $this->behatFormatter = ($behatFormatter == null) ? new BehatFormatter() : $behatFormatter;
-        $this->app_path = $app_base;
-        $this->bin_path = $this->app_path . '/vendor/bin/';
+        $this->fileSystem           = ($fileSystem == null) ? new Filesystem() : $fileSystem;
+        $this->finder               = ($finder == null) ? new Finder() : $finder;
     }
 
-    public function getProjectHash()
-    {
-        return $this->hash;
-    }
 
-    public function setProjectHash($hash)
+    /**
+     * This is the path below your behat.yml tests etc
+     * example
+     *   base = /tmp/behat
+     *   in there would be
+     *     behat.yml
+     *     features/ <--some tests.feature files
+     *     features/bootstrap
+     * @param null $base_path
+     * @return $this
+     */
+    public function setBasePath($base_path = null)
     {
-        $this->hash     = $hash;
+        if ($base_path == null) {
+            $this->base_path        = $this->getStoragePath() . '/default/';
+        } else {
+            $this->base_path        = $base_path;
+        }
         return $this;
     }
 
-    public function loadTestFromProject($name)
+    public function getBasePath()
     {
-
-        $this->filename     = $this->replaceDashWithDots($name);
-        $this->path         = $this->getProjectHash();
-        $this->full_path    = $this->behat_folder_base . '/' . $this->path . '/features/';
-        $file               = $this->getFileInfo();
-        $content            = $file['content'];
-        $name               = $file['name'];
-        $path               = $this->full_path;
-
-        return compact('name', 'content', 'path', 'project');
-    }
-
-    public function plain2html($content)
-    {
-        return $this->behatFormatter->plainToHtml($content);
-    }
-
-    /**
-     * @param string $filename
-     * @param string $full_path minus filename should end if forward slash
-     * @return array
-     */
-    public function getFileInfo($filename = null, $full_path = null)
-    {
-        $this->filename     = ($filename != null) ? $filename : $this->filename;
-        $this->full_path    = ($full_path != null) ? $full_path : $this->full_path;
-        $fileFound = array();
-        foreach($this->finder->files()->name($this->filename)->in($this->full_path) as $file) {
-            $fileFound = array(
-                'name'     => $file->getFilename(),
-                'path'     => $file->getRealpath(),
-                'content'  => $file->getContents(),
-            );
+        if($this->base_path == null) {
+            $this->setBasePath();
         }
-        return $fileFound;
+        return $this->base_path;
+    }
+
+    public function setAppPath($app_path = null)
+    {
+        if ($app_path == null) {
+            $current_base           = __DIR__;
+            $current_base_array     = explode("/", $current_base);
+            $current_base_array     = array_slice($current_base_array, 0, -3);
+            $this->app_path         = implode("/", $current_base_array);
+        } else {
+            $this->app_path = $app_path;
+        }
+        return $this;
+    }
+
+    public function setStoragePath($storage_path = null)
+    {
+        if ($storage_path == null) {
+            $this->storage_path     = $this->getAppPath() . '/storage';
+        } else {
+            $this->storage_path = $storage_path;
+        }
+        return $this;
+    }
+
+    public function getStoragePath()
+    {
+        if (!$this->storage_path) {
+            $this->storage_path = $this->setStoragePath();
+        }
+        return $this->storage_path;
+    }
+
+    public function getAppPath()
+    {
+        if(!$this->app_path) {
+            $this->setAppPath();
+        }
+        return $this->app_path;
     }
 
     public function replaceDashWithDots($name)
@@ -106,19 +122,11 @@ class BehatHelper
         return str_replace('.', '_', $name);
     }
 
-    public function getBaseBinPath()
-    {
-        return $this->bin_path;
-    }
-
-    public function setBaseBinPath($path)
-    {
-        $this->bin_path = $path;
-        return $this;
-    }
-
     public function getBehatYmlPath()
     {
+        if(!$this->behatYml_path) {
+            $this->setBehatYmlPath();
+        }
         return $this->behatYml_path;
     }
 
@@ -128,52 +136,59 @@ class BehatHelper
         {
             $this->behatYml_path = $path;
         } else {
-            $this->behatYml_path = $this->behat_folder_base . '/' . $this->hash . '/behat.yml';
+            $this->behatYml_path = $this->getBasePath() . '/behat.yml';
         }
         return $this;
     }
 
     public function getBootstrapPath()
     {
+        if(!$this->bootstrapPath) {
+            $this->setBootstrapPath();
+        }
         return $this->bootstrapPath;
     }
 
-    public function setBootstrapPath()
+    public function setBootstrapPath($path = null)
     {
-        $this->bootstrapPath = $this->behat_folder_base . '/' . $this->hash . '/features/bootstrap';
+        if($path == null) {
+            $this->bootstrapPath = $this->getBasePath() . '/features/bootstrap/';
+        } else {
+            $this->bootstrapPath = $path;
+        }
         return $this;
     }
 
     public function getFeaturePathWithFeatureFileName()
     {
+        if($this->fullPathAndFilenameToFeatureContext == null) $this->setFeaturePathWithFeatureFileName();
         return $this->fullPathAndFilenameToFeatureContext;
     }
 
-    public function setFeaturePathWithFeatureFileName()
+    public function setFeaturePathWithFeatureFileName($path = null)
     {
-        $this->fullPathAndFilenameToFeatureContext = $this->behat_folder_base . '/' . $this->hash . '/features/bootstrap/FeatureContext.php';
+        if($path != null)
+        {
+            $this->fullPathAndFilenameToFeatureContext = $path;
+        } else {
+            $this->fullPathAndFilenameToFeatureContext = $this->getBasePath() .  '/features/bootstrap/FeatureContext.php';
+        }
         return $this;
     }
 
     public function getTestPath()
     {
+        if($this->testPath == null) $this->setTestPath();
         return $this->testPath;
     }
 
-    public function setTestPath()
+    public function setTestPath($path = null)
     {
-        $this->testPath = $this->behat_folder_base . '/' . $this->hash . '/features';
-        return $this;
-    }
-
-    public function getRootHashFolder()
-    {
-        return $this->rootHashFolder;
-    }
-
-    public function setRootHashFolder($path = null)
-    {
-        $this->rootHashFolder = ($path == null) ? $this->behat_folder_base . '/' . $this->getProjectHash() : $path;
+        if($path == null) {
+            $this->testPath = $this->getBasePath() . '/features';
+        } else {
+            $this->testPath = $path;
+        }
         return $this;
     }
 
@@ -184,16 +199,30 @@ class BehatHelper
         return $this;
     }
 
-    public function delete()
+    public function setTemplateFolder($path = null)
     {
-        if($this->fileSystem->exists($this->getRootHashFolder($this->hash))) {
-            $this->fileSystem->remove($this->getRootHashFolder($this->hash));
+        if($path == null) {
+            $this->templateFolder       = $this->getAppPath() . '/lib/BehatApp/template_files/';
+        } else {
+            $this->templateFolder       = $path;
         }
+        return $this;
     }
 
-    public function copyTemplateFilesOver()
+    public function getTemplateFolder()
     {
-        $this->fileSystem->mirror($this->getTemplateFolder() . '/', $this->behat_folder_base . '/' . $this->hash);
+        if($this->templateFolder == null) $this->setTemplateFolder();
+        return $this->templateFolder;
+    }
+
+    public function copyTemplateFilesOver($destination)
+    {
+        try {
+           $this->fileSystem->mirror($this->getTemplateFolder() . '/', $destination);
+        }
+        catch(IOException $e) {
+            throw new BehatAppException("Could not copy over files {$e->getMessage()}");
+        }
         return $this;
     }
 
@@ -202,29 +231,8 @@ class BehatHelper
         return $this->generateRandomString();
     }
 
-    public function listProjectFiles()
-    {
-        $files = array();
-        foreach($this->finder->files()->name('*.feature')->in($this->behat_folder_base . '/' . $this->hash . '/features/') as $file) {
-            $files[$file->getFilename()] = array(
-                'name'         => $file->getFilename(),
-                'name_dashed'  => $this->replaceDotsWithDashes($file->getFileName()),
-                'path'         => $file->getRealpath(),
-                'content'      => $file->getContents(),
-            );
-        }
-        return $files;
-    }
-
     public function generateRandomString($length = 32) {
         return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
-    }
-
-    public function getTemplateFolder()
-    {
-        $current_base           = __DIR__;
-        $this->templateFolder = $current_base . '/template_files';
-        return $this->templateFolder;
     }
 
     public function check_slash($full_path)

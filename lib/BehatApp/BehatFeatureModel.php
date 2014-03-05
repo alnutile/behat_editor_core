@@ -17,7 +17,7 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         $this->model        = $this->newModel();
         $this->finder       = ($finder == null) ? new Finder() : $finder;
         $this->filesystem   = ($filesystem == null) ? new Filesystem() : $filesystem;
-        $this->helper       = new BehatHelper(null, null);
+        $this->helper       = new BehatHelper;
     }
 
     public function getNewModel()

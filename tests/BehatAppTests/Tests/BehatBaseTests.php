@@ -21,8 +21,10 @@ class BehatBaseTests extends \PHPUnit_Framework_TestCase
     public $storage_path;
     public $templateFiles;
     public $templateBehatYml;
+    public $testBehatYmlFile;
     public $model;
     public $filesystem;
+    public $destination;
     public $finder;
 
     public function __construct()
@@ -53,21 +55,29 @@ class BehatBaseTests extends \PHPUnit_Framework_TestCase
         $this->app_base         = implode("/", $current_base_array);
         $this->templateFiles    = $this->app_base . '/lib/BehatApp/template_files/features/';
         $this->templateBehatYml = $this->app_base . '/lib/BehatApp/template_files/behat.yml';
+        $this->testBehatYmlFile = '/tmp/behatYml/behat.yml';
         $this->storage_path     = $this->app_base . '/storage';
         $this->formatter        = new BehatFormatter();
-        $this->behatHelper      = new BehatHelper($this->storage_path, $this->app_base);
+        $this->behatHelper      = new BehatHelper();
+        $this->behatHelper
+            ->setStoragePath($this->storage_path)
+            ->setAppPath($this->app_base);
         $this->model            = new BehatFeatureModel();
         $this->behatYml         = new BehatYml(null, null, null, $this->behatHelper);
         $this->yaml             = new Yaml();
         $this->filesystem       = new Filesystem();
         $this->finder           = new Finder();
         $this->project          = $this->makeProject();
-        $this->behatHelper->setProjectHash($this->project->hash)->createPath()
-            ->copyTemplateFilesOver();
-        $this->behatHelper->setBehatYmlPath();
-        $this->behatYml->setDestination($this->behatHelper->getBehatYmlPath());
-        $this->behatYml->writeBehatYmlFile();
-        $this->destination  = $this->behatHelper->getRootHashFolder();
+        $this->behatHelper->setBehatYmlPath($this->templateBehatYml);
+        $this->behatYml->setDestination($this->testBehatYmlFile);
+
+        if(!$this->filesystem->exists('/tmp/behatYml')) {
+            $this->filesystem->mkdir('/tmp/behatYml');
+        }
+        if(!$this->filesystem->exists('/tmp/testTemplateCopy')) {
+            $this->filesystem->mkdir('/tmp/testTemplateCopy');
+        }
+        $this->filesystem->copy($this->templateBehatYml, $this->testBehatYmlFile);
     }
 
     public function makePlainTextTest()
@@ -107,6 +117,13 @@ HEREDOC;
         $files = new Filesystem();
         if($files->exists($this->storage_path . '/behat')) {
             $files->remove($this->storage_path . '/behat');
+        }
+        if($this->filesystem->exists('/tmp/behatYml')) {
+            $this->filesystem->remove('/tmp/behatYml');
+        }
+        if($this->filesystem->exists('/tmp/testTemplateCopy')) {
+            $this->filesystem->chmod('/tmp/testTemplateCopy', 0777);
+            $this->filesystem->remove('/tmp/testTemplateCopy');
         }
     }
 
