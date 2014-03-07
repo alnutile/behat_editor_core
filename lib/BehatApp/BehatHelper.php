@@ -197,7 +197,9 @@ class BehatHelper
     {
         //@TODO this must be provided by the user
         //$path = ($path == null) ? $this->getBasePath() . '/' . $this->hash : $path;
-        $this->fileSystem->mkdir($path);
+        if(!$this->fileSystem->exists($path)) {
+            $this->fileSystem->mkdir($path);
+        }
         return $this;
     }
 
