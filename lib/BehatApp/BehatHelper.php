@@ -20,6 +20,7 @@ class BehatHelper
     protected $fileSystem;
     protected $finder;
     protected $behatFormatter;
+    protected $yamlHelper;
     public $filename;
     public $path;
     public $full_path;
@@ -192,9 +193,10 @@ class BehatHelper
         return $this;
     }
 
-    public function createPath($path = null)
+    public function createPath($path)
     {
-        $path = ($path == null) ? $this->behat_folder_base . '/' . $this->hash : $path;
+        //@TODO this must be provided by the user
+        //$path = ($path == null) ? $this->getBasePath() . '/' . $this->hash : $path;
         $this->fileSystem->mkdir($path);
         return $this;
     }
@@ -218,7 +220,7 @@ class BehatHelper
     public function copyTemplateFilesOver($destination)
     {
         try {
-           $this->fileSystem->mirror($this->getTemplateFolder() . '/', $destination);
+            $this->fileSystem->mirror($this->getTemplateFolder() . '/', $destination);
         }
         catch(IOException $e) {
             throw new BehatAppException("Could not copy over files {$e->getMessage()}");

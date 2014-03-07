@@ -69,6 +69,21 @@ class BehatHelperTest extends BehatBaseTests {
         $this->assertEquals($tmp, $this->behatHelper->getAppPath());
     }
 
+    /**
+     * @expectedException PHPUnit_Framework_Error_Warning
+     */
+    public function testCreatePathFail()
+    {
+        $this->behatHelper->createPath();
+    }
+
+    public function testCreatePathPass()
+    {
+        $path = '/tmp/createPath';
+        $this->behatHelper->createPath($path);
+        $this->assertTrue($this->filesystem->exists($path));
+    }
+
     public function testGetStoragePathDefault()
     {
         $this->assertEquals($this->storage_path, $this->behatHelper->getStoragePath());
