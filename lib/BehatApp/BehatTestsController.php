@@ -3,7 +3,6 @@
 use BehatWrapper\BehatWrapper;
 use BehatApp\BehatHelper;
 use BehatWrapper\BehatCommand;
-use Project;
 
 class BehatTestsController extends \BaseController
 {
