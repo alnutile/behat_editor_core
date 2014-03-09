@@ -17,7 +17,7 @@ class BehatYml {
     public      $ymlPathWithFileName;
     public      $destination;
 
-    public function __construct(Yaml $yml = null, Finder $finder = null, Filesystem $filesystem = null, BehatHelper $helper)
+    public function __construct(Yaml $yml = null, Finder $finder = null, Filesystem $filesystem = null, BehatHelper $helper = null)
     {
         $this->yml              = ($yml == null) ? new Yaml : $yml;
         $this->finder           = ($finder == null) ? new Finder : $finder;
