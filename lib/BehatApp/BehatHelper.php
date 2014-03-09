@@ -177,6 +177,24 @@ class BehatHelper
         return $this;
     }
 
+
+    public function getFeaturePath()
+    {
+        if($this->featurePath == null) $this->setFeaturePath();
+        return $this->featurePath;
+    }
+
+    public function setFeaturePath($path = null)
+    {
+        if($path != null)
+        {
+            $this->featurePath = $path;
+        } else {
+            $this->featurePath = $this->getBasePath() .  '/features/bootstrap/';
+        }
+        return $this;
+    }
+
     public function getTestPath()
     {
         if($this->testPath == null) $this->setTestPath();
