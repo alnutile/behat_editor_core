@@ -129,18 +129,14 @@ class BehatFeatureModelTest extends BehatBaseTests {
         $this->assertContains('Your Test is Updated', $contentSaved, "File not updated");
     }
 
-    /**
-     * @expectedException BehatApp\Exceptions\BehatAppException
-     */
     public function testUpdateFailDoesNotExist()
     {
         $this->full_path_updated = "/tmp/testUpdate/testFail.feature";
-        $this->model->update(["Test Test", $this->full_path_updated]);
+        $output = $this->model->update(["Test Test", $this->full_path_updated]);
+        $this->assertEquals('1', $output['error']);
+        $this->assertEquals('Missing Feature Test Test', $output['message']);
     }
 
-    /**
-     * @expectedException BehatApp\Exceptions\BehatAppException
-     */
     public function testUpdateFailCanNotWrite()
     {
         $this->full_path_updated = "/tmp/testUpdate";
@@ -152,7 +148,9 @@ class BehatFeatureModelTest extends BehatBaseTests {
         $this->filesystem->dumpFile($this->full_path_updated . '/test1.feature', "Test Delete", $mode = 0444);
         $this->filesystem->chmod($this->full_path_updated, $mode = 0555, $umask = 0000, TRUE);
         $this->assertFileExists($this->full_path_updated . '/test1.feature', "File not there");
-        $this->model->update(["Test Test", $this->full_path_updated . '/test1.feature']);
+        $output = $this->model->update(["Test Test", $this->full_path_updated . '/test1.feature']);
+        $this->assertEquals('1', $output['error']);
+        $this->assertNotEquals('Update Complete', $output['message']);
     }
 
     public function testDelete()
@@ -322,31 +320,25 @@ class BehatFeatureModelTest extends BehatBaseTests {
 
     }
 
-    /**
-     * @expectedException BehatApp\Exceptions\BehatAppException
-     */
     public function testValidationTextGivenIAmOnFail()
     {
         $content_bad                = "Feature Scenario";
-        $this->model->validate($content_bad);
+        $output = $this->model->validate($content_bad);
+        $this->assertEquals('Missing Given I am on Feature Scenario', $output);
     }
 
-    /**
-     * @expectedException BehatApp\Exceptions\BehatAppException
-     */
     public function testValidationTextFeatureFail()
     {
         $content_bad                = "Test Test";
-        $this->model->validate($content_bad);
+        $output = $this->model->validate($content_bad);
+        $this->assertEquals('Missing Feature Test Test', $output);
     }
 
-    /**
-     * @expectedException BehatApp\Exceptions\BehatAppException
-     */
     public function testValidationTextFeatureFailMoreThanOneFeature()
     {
         $content_bad                = "Feature Feature Scenario Test Test";
-        $this->model->validate($content_bad);
+        $output = $this->model->validate($content_bad);
+        $this->assertEquals('Feature is in test more than once Feature Feature Scenario Test Test', $output);
     }
 
     public function testValidationTextFeaturePass()
@@ -355,14 +347,11 @@ class BehatFeatureModelTest extends BehatBaseTests {
         $this->assertFalse($this->model->validate($content_good));
     }
 
-    /**
-     * @expectedException BehatApp\Exceptions\BehatAppException
-     */
     public function testValidationTextScenarioFail()
     {
-        $content_good               = $this->makePlainTextTest();
         $content_bad                = "Feature Test Test";
-        $this->model->validate($content_bad);
+        $output = $this->model->validate($content_bad);
+        $this->assertEquals('Missing Scenario Feature Test Test', $output);
     }
 
     public function testValidationTextScenarioPass()
