@@ -16,11 +16,11 @@ class BehatHelper
 {
     const BASE_BEHAT_FOLDER = '/behat';
 
-    protected $behat_folder_base;
-    protected $fileSystem;
-    protected $finder;
-    protected $behatFormatter;
-    protected $yamlHelper;
+    public $behat_folder_base;
+    public $fileSystem;
+    public $finder;
+    public $behatFormatter;
+    public $yamlHelper;
     public $filename;
     public $featurePath;
     public $path;
