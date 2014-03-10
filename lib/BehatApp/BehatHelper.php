@@ -22,6 +22,7 @@ class BehatHelper
     protected $behatFormatter;
     protected $yamlHelper;
     public $filename;
+    public $featurePath;
     public $path;
     public $full_path;
     public $storage_path;
@@ -137,7 +138,7 @@ class BehatHelper
         {
             $this->behatYml_path = $path;
         } else {
-            $this->behatYml_path = $this->getBasePath() . '/behat.yml';
+            $this->behatYml_path = $this->getBasePath() . 'behat.yml';
         }
         return $this;
     }
@@ -261,5 +262,9 @@ class BehatHelper
     {
         $full_path = (substr($full_path, -1) !== '/') ? $full_path . '/' : $full_path;
         return $full_path;
+    }
+
+    public function delete($path) {
+        return $this->fileSystem->remove($path);
     }
 }

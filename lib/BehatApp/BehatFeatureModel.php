@@ -35,8 +35,11 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         if($this->filesystem->exists($destination)) {
             throw new BehatAppException("File already exists $destination");
         } else {
-            $this->validate($content);
+            if($output = $this->validate($content)){
+                return array('error' => 1, 'message' => $output, 'data' => $content);
+            }
             $this->filesystem->dumpFile($destination, $content, $mode = 0775);
+            return array('error' => 0, 'message' => 'Save Complete', 'data' => $content);
         }
     }
 
@@ -58,7 +61,9 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
     public function update(array $params)
     {
         list($content, $destination) = $params;
-        $this->validate($content);
+        if($output = $this->validate($content)){
+            return array('error' => 1, 'message' => $output, 'data' => $content);
+        }
         if(!$this->filesystem->exists($destination)) {
             throw new BehatAppException("File does not exists $destination please use create");
         } else {
@@ -69,6 +74,7 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
                 throw new BehatAppException("Can not update the file {$e->getMessage()}");
             }
         }
+        return array('error' => 0, 'message' => 'Update Complete', 'data' => $content);
     }
 
     public function updateMany(array $files_and_path)
@@ -144,19 +150,19 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
     public function validate($text)
     {
         if(strpos($text, 'Feature') === FALSE) {
-            throw new BehatAppException("Missing Feature $text");
+            return "Missing Feature $text";
         }
 
         if(substr_count($text, "Feature") > 1) {
-            throw new BehatAppException("Feature is in test more than once $text");
+            return "Feature is in test more than once $text";
         }
 
         if(strpos($text, 'Scenario') === FALSE) {
-            throw new BehatAppException("Missing Scenario $text");
+            return "Missing Scenario $text";
         }
 
         if(strpos($text, 'Given I am') === FALSE) {
-            throw new BehatAppException("Missing Given I am on $text");
+            return "Missing Given I am on $text";
         }
 
         return FALSE;
