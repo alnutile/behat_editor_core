@@ -4,7 +4,7 @@ use BehatWrapper\BehatWrapper;
 use BehatApp\BehatHelper;
 use BehatWrapper\BehatCommand;
 
-class BehatTestsController extends \BaseController
+class BehatTestsController 
 {
 
     protected $behatWrapper;
