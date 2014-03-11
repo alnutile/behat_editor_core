@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="069026cd-e7fc-4acd-a9f5-c6ea0444ed73" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php" afterPath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="behat_product_core.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,13 +25,13 @@
     <favorites_list name="behat_product_core" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.54075235">
+    <splitter split-orientation="horizontal" split-proportion="0.63479626">
       <split-first>
         <leaf>
           <file leaf-file-name="BehatFeatureModelTest.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="87" column="54" selection-start="3032" selection-end="3032" vertical-scroll-proportion="0.32798833" vertical-offset="1050" max-vertical-offset="6810">
+                <state line="81" column="38" selection-start="3001" selection-end="3019" vertical-scroll-proportion="0.2186589" vertical-offset="1035" max-vertical-offset="6660">
                   <folding />
                 </state>
               </provider>
@@ -1158,7 +1159,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="54" selection-start="3032" selection-end="3032" vertical-scroll-proportion="0.32798833" vertical-offset="1050" max-vertical-offset="6810">
+        <state line="81" column="38" selection-start="3001" selection-end="3019" vertical-scroll-proportion="0.2186589" vertical-offset="1035" max-vertical-offset="6660">
           <folding />
         </state>
       </provider>

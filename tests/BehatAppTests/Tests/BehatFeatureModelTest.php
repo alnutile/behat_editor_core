@@ -22,6 +22,7 @@ class BehatFeatureModelTest extends BehatBaseTests {
     {
         parent::setUp();
         $this->root                 = vfsStream::setup('destination');
+        $this->full_path            = '/tmp/tests/';
         $this->full_path_delete     = '/tmp/testDelete';
         $this->full_path_updated    = "/tmp/testUpdate/";
         $this->full_path_create     = "/tmp/testCreate/";
@@ -43,7 +44,6 @@ class BehatFeatureModelTest extends BehatBaseTests {
             $this->filesystem->remove($this->full_path);
         }
 
-        $this->full_path_updated = "/tmp/testUpdate/";
         if($this->filesystem->exists($this->full_path_updated)) {
             $this->filesystem->chmod($this->full_path_updated, $mode = 0777, $umask = 0000, TRUE);
             $this->filesystem->remove($this->full_path_updated);
@@ -67,24 +67,14 @@ class BehatFeatureModelTest extends BehatBaseTests {
 
     public function testCreate()
     {
-        if($this->filesystem->exists($this->full_path_create)) {
-            $this->filesystem->remove($this->full_path_create);
-        }
-
         $path = $this->full_path_create;
-        $path_w_file = $this->full_path . 'test.feature';
+        $path_w_file = $this->full_path_create . 'test.feature';
         $vcs = GitHelper::open($path, '/usr/bin/git', TRUE);
-
         $content = $this->model->getNewModel();
         $content = implode("\n", $content);
-
-
         $this->assertFalse($this->filesystem->exists($path_w_file));
-
         $this->model->create([$content, $path_w_file], $vcs);
-
         $this->assertFileExists($path_w_file, "File not there");
-
         $contentSaved = file_get_contents($path_w_file);
         $this->assertEquals($content, $contentSaved, "Content does not match");
     }
