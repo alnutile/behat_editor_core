@@ -7,11 +7,9 @@ use BehatWrapper\BehatCommand;
 class BehatTestsController 
 {
 
-    protected $behatWrapper;
-    protected $behatTestHelper;
-    protected $project;
-    protected $command;
-    protected $hash;
+    public  $behatWrapper;
+    public $behatTestHelper;
+    public $command;
     protected $fileArray;
 
     public function __construct(BehatWrapper $behatWrapper = null, BehatHelper $behatTestHelper = null)
