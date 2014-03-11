@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="069026cd-e7fc-4acd-a9f5-c6ea0444ed73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatGitTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/BehatApp/GitHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/BehatApp/BehatFeatureInterface.php" afterPath="$PROJECT_DIR$/lib/BehatApp/BehatFeatureInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php" afterPath="$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php" afterPath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/bootstrap.php" afterPath="$PROJECT_DIR$/tests/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml" afterPath="$PROJECT_DIR$/phpunit.xml" />
     </list>
     <ignored path="behat_product_core.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +30,7 @@
           <file leaf-file-name="BehatFeatureModelTest.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="369" column="0" selection-start="15463" selection-end="15463" vertical-scroll-proportion="-0.85860056" vertical-offset="6094" max-vertical-offset="6780">
+                <state line="87" column="54" selection-start="3032" selection-end="3032" vertical-scroll-proportion="0.32798833" vertical-offset="1050" max-vertical-offset="6810">
                   <folding />
                 </state>
               </provider>
@@ -1074,23 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatBaseTests.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="55" selection-start="1837" selection-end="1842" vertical-scroll-proportion="0.33282906" vertical-offset="470" max-vertical-offset="1620">
-          <folding>
-            <element signature="e#696#761#0" expanded="false" />
-            <element signature="e#767#811#0" expanded="false" />
-            <element signature="e#817#888#0" expanded="false" />
-            <element signature="e#894#959#0" expanded="false" />
-            <element signature="e#2627#2968#0" expanded="false" />
-            <element signature="e#2685#2939#0" expanded="false" />
-            <element signature="e#2974#3579#0" expanded="false" />
-            <element signature="e#3032#3551#0" expanded="false" />
-            <element signature="e#3585#3666#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatAppBase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="6" selection-start="34" selection-end="34" vertical-scroll-proportion="0.06656805" vertical-offset="0" max-vertical-offset="676">
@@ -1164,9 +1139,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatBaseTests.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="13" selection-start="703" selection-end="705" vertical-scroll-proportion="0.33282906" vertical-offset="125" max-vertical-offset="1620">
+          <folding>
+            <element signature="e#696#761#0" expanded="false" />
+            <element signature="e#767#811#0" expanded="false" />
+            <element signature="e#817#888#0" expanded="false" />
+            <element signature="e#894#959#0" expanded="false" />
+            <element signature="e#2627#2968#0" expanded="false" />
+            <element signature="e#2685#2939#0" expanded="false" />
+            <element signature="e#2974#3579#0" expanded="false" />
+            <element signature="e#3032#3551#0" expanded="false" />
+            <element signature="e#3585#3666#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="369" column="0" selection-start="15463" selection-end="15463" vertical-scroll-proportion="-0.85860056" vertical-offset="6094" max-vertical-offset="6780">
+        <state line="87" column="54" selection-start="3032" selection-end="3032" vertical-scroll-proportion="0.32798833" vertical-offset="1050" max-vertical-offset="6810">
           <folding />
         </state>
       </provider>

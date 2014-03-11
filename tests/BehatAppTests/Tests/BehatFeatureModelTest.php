@@ -67,23 +67,25 @@ class BehatFeatureModelTest extends BehatBaseTests {
 
     public function testCreate()
     {
-        $vcs = GitHelper::open($this->featureModelTestPath, '/usr/bin/git', TRUE);
-        $path = $this->featureModelTestPath;
+        if($this->filesystem->exists($this->full_path_create)) {
+            $this->filesystem->remove($this->full_path_create);
+        }
+
+        $path = $this->full_path_create;
+        $path_w_file = $this->full_path . 'test.feature';
+        $vcs = GitHelper::open($path, '/usr/bin/git', TRUE);
 
         $content = $this->model->getNewModel();
         $content = implode("\n", $content);
 
-        $this->full_path = $path;
-        if($this->filesystem->exists($this->full_path)) {
-            $this->filesystem->remove($this->full_path);
-        }
-        $this->assertFalse($this->filesystem->exists($this->full_path));
 
-        $this->model->create([$content, $this->full_path], $vcs);
+        $this->assertFalse($this->filesystem->exists($path_w_file));
 
-        $this->assertFileExists($this->full_path, "File not there");
+        $this->model->create([$content, $path_w_file], $vcs);
 
-        $contentSaved = file_get_contents($this->full_path);
+        $this->assertFileExists($path_w_file, "File not there");
+
+        $contentSaved = file_get_contents($path_w_file);
         $this->assertEquals($content, $contentSaved, "Content does not match");
     }
 
