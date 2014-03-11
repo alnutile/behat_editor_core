@@ -14,7 +14,8 @@
         "symfony/config":  "*",
         "symfony/filesystem":  "*",
         "symfony/yaml":         "*",
-        "symfony/serializer":  "*"
+        "symfony/serializer":  "*",
+        "teqneers/php-stream-wrapper-for-git": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "*",

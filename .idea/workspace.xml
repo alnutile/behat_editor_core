@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="069026cd-e7fc-4acd-a9f5-c6ea0444ed73" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatGitTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/BehatApp/GitHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/BehatApp/BehatFeatureInterface.php" afterPath="$PROJECT_DIR$/lib/BehatApp/BehatFeatureInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php" afterPath="$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php" afterPath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/bootstrap.php" afterPath="$PROJECT_DIR$/tests/bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml" afterPath="$PROJECT_DIR$/phpunit.xml" />
+    </list>
+    <ignored path="behat_product_core.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="behat_product_core" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.54075235">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="BehatFeatureModelTest.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="369" column="0" selection-start="15463" selection-end="15463" vertical-scroll-proportion="-0.85860056" vertical-offset="6094" max-vertical-offset="6780">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="BehatFeatureModel.php" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="123" column="58" selection-start="4184" selection-end="4184" vertical-scroll-proportion="0.5701358" vertical-offset="192" max-vertical-offset="915">
+                  <folding>
+                    <element signature="e#889#959#0" expanded="false" />
+                    <element signature="e#965#1046#0" expanded="false" />
+                    <element signature="e#1052#1695#0" expanded="false" />
+                    <element signature="e#1186#1689#0" expanded="false" />
+                    <element signature="e#1319#1689#0" expanded="false" />
+                    <element signature="e#1338#1478#0" expanded="false" />
+                    <element signature="e#1701#1963#0" expanded="false" />
+                    <element signature="e#1743#1933#0" expanded="false" />
+                    <element signature="e#1969#2406#0" expanded="false" />
+                    <element signature="e#2083#2377#0" expanded="false" />
+                    <element signature="e#2216#2377#0" expanded="false" />
+                    <element signature="e#2244#2299#0" expanded="false" />
+                    <element signature="e#2244#2335#0" expanded="false" />
+                    <element signature="e#2412#3178#0" expanded="false" />
+                    <element signature="e#2518#2650#0" expanded="false" />
+                    <element signature="e#2659#3084#0" expanded="false" />
+                    <element signature="e#2812#3084#0" expanded="false" />
+                    <element signature="e#2831#3074#0" expanded="false" />
+                    <element signature="e#2946#3074#0" expanded="false" />
+                    <element signature="e#3184#3356#0" expanded="false" />
+                    <element signature="e#3254#3350#0" expanded="false" />
+                    <element signature="e#3362#4124#0" expanded="false" />
+                    <element signature="e#3556#4118#0" expanded="false" />
+                    <element signature="e#3709#3856#0" expanded="false" />
+                    <element signature="e#3857#4118#0" expanded="false" />
+                    <element signature="e#3876#4108#0" expanded="false" />
+                    <element signature="e#3965#4108#0" expanded="false" />
+                    <element signature="e#4130#4302#0" expanded="false" />
+                    <element signature="e#4200#4296#0" expanded="false" />
+                    <element signature="e#4308#4439#0" expanded="false" />
+                    <element signature="e#4444#5027#0" expanded="false" />
+                    <element signature="e#4722#4997#0" expanded="false" />
+                    <element signature="e#4750#4805#0" expanded="false" />
+                    <element signature="e#4750#4840#0" expanded="false" />
+                    <element signature="e#4860#4997#0" expanded="false" />
+                    <element signature="e#5033#5510#0" expanded="false" />
+                    <element signature="e#5283#5362#0" expanded="false" />
+                    <element signature="e#5283#5419#0" expanded="false" />
+                    <element signature="e#5283#5479#0" expanded="false" />
+                    <element signature="e#5516#6026#0" expanded="false" />
+                    <element signature="e#5562#5656#0" expanded="false" />
+                    <element signature="e#5666#5778#0" expanded="false" />
+                    <element signature="e#5788#5884#0" expanded="false" />
+                    <element signature="e#5894#5997#0" expanded="false" />
+                    <element signature="e#6032#6227#0" expanded="false" />
+                    <element signature="e#6095#6221#0" expanded="false" />
+                    <element signature="e#6233#6411#0" expanded="false" />
+                    <element signature="e#6417#6612#0" expanded="false" />
+                    <element signature="e#6481#6606#0" expanded="false" />
+                    <element signature="e#6618#6913#0" expanded="false" />
+                    <element signature="e#6671#6882#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GitHelper.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/BehatApp/GitHelper.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="11" column="24" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+                  <folding>
+                    <element signature="e#27#66#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="BehatHelper.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatHelper.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="69" column="31" selection-start="1763" selection-end="1774" vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1500">
+                  <folding>
+                    <element signature="e#194#289#0" expanded="false" />
+                    <element signature="e#1182#1468#0" expanded="false" />
+                    <element signature="e#1473#1741#0" expanded="false" />
+                    <element signature="e#1534#1713#0" expanded="false" />
+                    <element signature="e#1647#1713#0" expanded="false" />
+                    <element signature="e#1747#1904#0" expanded="false" />
+                    <element signature="e#1791#1865#0" expanded="false" />
+                    <element signature="e#1910#2355#0" expanded="false" />
+                    <element signature="e#1969#2327#0" expanded="false" />
+                    <element signature="e#2270#2327#0" expanded="false" />
+                    <element signature="e#2361#2632#0" expanded="false" />
+                    <element signature="e#2428#2604#0" expanded="false" />
+                    <element signature="e#2539#2604#0" expanded="false" />
+                    <element signature="e#2638#2823#0" expanded="false" />
+                    <element signature="e#2685#2781#0" expanded="false" />
+                    <element signature="e#2829#2975#0" expanded="false" />
+                    <element signature="e#2872#2937#0" expanded="false" />
+                    <element signature="e#2981#3080#0" expanded="false" />
+                    <element signature="e#3086#3187#0" expanded="false" />
+                    <element signature="e#3193#3359#0" expanded="false" />
+                    <element signature="e#3241#3316#0" expanded="false" />
+                    <element signature="e#3365#3620#0" expanded="false" />
+                    <element signature="e#3425#3592#0" expanded="false" />
+                    <element signature="e#3505#3592#0" expanded="false" />
+                    <element signature="e#3626#3794#0" expanded="false" />
+                    <element signature="e#3675#3751#0" expanded="false" />
+                    <element signature="e#3800#4059#0" expanded="false" />
+                    <element signature="e#3861#4031#0" expanded="false" />
+                    <element signature="e#3973#4031#0" expanded="false" />
+                    <element signature="e#4065#4294#0" expanded="false" />
+                    <element signature="e#4300#4647#0" expanded="false" />
+                    <element signature="e#4378#4619#0" expanded="false" />
+                    <element signature="e#4480#4619#0" expanded="false" />
+                    <element signature="e#4654#4797#0" expanded="false" />
+                    <element signature="e#4803#5065#0" expanded="false" />
+                    <element signature="e#4862#5037#0" expanded="false" />
+                    <element signature="e#4940#5037#0" expanded="false" />
+                    <element signature="e#5071#5202#0" expanded="false" />
+                    <element signature="e#5208#5441#0" expanded="false" />
+                    <element signature="e#5264#5413#0" expanded="false" />
+                    <element signature="e#5360#5413#0" expanded="false" />
+                    <element signature="e#5447#5753#0" expanded="false" />
+                    <element signature="e#5631#5725#0" expanded="false" />
+                    <element signature="e#5759#6041#0" expanded="false" />
+                    <element signature="e#5821#6013#0" expanded="false" />
+                    <element signature="e#5948#6013#0" expanded="false" />
+                    <element signature="e#6047#6202#0" expanded="false" />
+                    <element signature="e#6208#6535#0" expanded="false" />
+                    <element signature="e#6274#6507#0" expanded="false" />
+                    <element signature="e#6385#6507#0" expanded="false" />
+                    <element signature="e#6541#6625#0" expanded="false" />
+                    <element signature="e#6631#6803#0" expanded="false" />
+                    <element signature="e#6809#6974#0" expanded="false" />
+                    <element signature="e#6980#7066#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Repository.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Git/Repository/Repository.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="77" column="27" selection-start="2902" selection-end="2902" vertical-scroll-proportion="0.0" vertical-offset="237" max-vertical-offset="3105">
+                  <folding>
+                    <element signature="e#1137#1296#0" expanded="false" />
+                    <element signature="e#1443#1693#0" expanded="false" />
+                    <element signature="e#1932#1991#0" expanded="false" />
+                    <element signature="e#2017#2874#0" expanded="false" />
+                    <element signature="e#3100#3182#1" expanded="false" />
+                    <element signature="e#3397#3487#1" expanded="false" />
+                    <element signature="e#4219#4311#1" expanded="false" />
+                    <element signature="e#4386#4576#0" expanded="false" />
+                    <element signature="e#4581#4827#0" expanded="false" />
+                    <element signature="e#4833#5078#0" expanded="false" />
+                    <element signature="e#5083#5308#0" expanded="false" />
+                    <element signature="e#5153#5301#0" expanded="false" />
+                    <element signature="e#5179#5300#1" expanded="false" />
+                    <element signature="e#5314#5476#0" expanded="false" />
+                    <element signature="e#5634#5705#0" expanded="false" />
+                    <element signature="e#5710#5773#0" expanded="false" />
+                    <element signature="e#5779#5859#0" expanded="false" />
+                    <element signature="e#5864#6220#0" expanded="false" />
+                    <element signature="e#5962#6082#0" expanded="false" />
+                    <element signature="e#6021#6081#0" expanded="false" />
+                    <element signature="e#6226#6651#0" expanded="false" />
+                    <element signature="e#6656#7414#0" expanded="false" />
+                    <element signature="e#6828#6884#0" expanded="false" />
+                    <element signature="e#6979#7049#0" expanded="false" />
+                    <element signature="e#7420#7612#0" expanded="false" />
+                    <element signature="e#7617#8399#0" expanded="false" />
+                    <element signature="e#8142#8288#0" expanded="false" />
+                    <element signature="e#8197#8287#0" expanded="false" />
+                    <element signature="e#8405#8628#0" expanded="false" />
+                    <element signature="e#8633#9266#0" expanded="false" />
+                    <element signature="e#9105#9259#0" expanded="false" />
+                    <element signature="e#9128#9258#1" expanded="false" />
+                    <element signature="e#9272#9624#0" expanded="false" />
+                    <element signature="e#9629#10224#0" expanded="false" />
+                    <element signature="e#10083#10217#0" expanded="false" />
+                    <element signature="e#10106#10216#1" expanded="false" />
+                    <element signature="e#10230#10508#0" expanded="false" />
+                    <element signature="e#10513#11043#0" expanded="false" />
+                    <element signature="e#10900#11036#0" expanded="false" />
+                    <element signature="e#10923#11035#1" expanded="false" />
+                    <element signature="e#11049#11865#0" expanded="false" />
+                    <element signature="e#11870#13188#0" expanded="false" />
+                    <element signature="e#13194#13863#0" expanded="false" />
+                    <element signature="e#13868#14221#0" expanded="false" />
+                    <element signature="e#14227#14794#0" expanded="false" />
+                    <element signature="e#14799#15197#0" expanded="false" />
+                    <element signature="e#15203#15751#0" expanded="false" />
+                    <element signature="e#15756#16179#0" expanded="false" />
+                    <element signature="e#16185#16481#0" expanded="false" />
+                    <element signature="e#16486#17546#0" expanded="false" />
+                    <element signature="e#16630#17504#0" expanded="false" />
+                    <element signature="e#17552#19256#0" expanded="false" />
+                    <element signature="e#19261#21398#0" expanded="false" />
+                    <element signature="e#19423#19597#0" expanded="false" />
+                    <element signature="e#19787#20990#0" expanded="false" />
+                    <element signature="e#21020#21123#0" expanded="false" />
+                    <element signature="e#21404#21675#0" expanded="false" />
+                    <element signature="e#21680#27273#0" expanded="false" />
+                    <element signature="e#21771#21827#0" expanded="false" />
+                    <element signature="e#21861#26425#0" expanded="false" />
+                    <element signature="e#26973#27086#0" expanded="false" />
+                    <element signature="e#26996#27085#1" expanded="false" />
+                    <element signature="e#27155#27244#0" expanded="false" />
+                    <element signature="e#27165#27218#1" expanded="false" />
+                    <element signature="e#27279#27440#0" expanded="false" />
+                    <element signature="e#27445#27850#0" expanded="false" />
+                    <element signature="e#27542#27667#0" expanded="false" />
+                    <element signature="e#27596#27666#0" expanded="false" />
+                    <element signature="e#27677#27805#0" expanded="false" />
+                    <element signature="e#27700#27804#1" expanded="false" />
+                    <element signature="e#27856#28062#0" expanded="false" />
+                    <element signature="e#28067#28477#0" expanded="false" />
+                    <element signature="e#28177#28290#0" expanded="false" />
+                    <element signature="e#28231#28289#0" expanded="false" />
+                    <element signature="e#28300#28431#0" expanded="false" />
+                    <element signature="e#28323#28430#1" expanded="false" />
+                    <element signature="e#28483#28978#0" expanded="false" />
+                    <element signature="e#28983#30159#0" expanded="false" />
+                    <element signature="e#29059#29155#0" expanded="false" />
+                    <element signature="e#29215#29349#0" expanded="false" />
+                    <element signature="e#29273#29317#0" expanded="false" />
+                    <element signature="e#29359#29494#0" expanded="false" />
+                    <element signature="e#29382#29493#1" expanded="false" />
+                    <element signature="e#29705#29936#0" expanded="false" />
+                    <element signature="e#29747#29826#0" expanded="false" />
+                    <element signature="e#29843#29922#0" expanded="false" />
+                    <element signature="e#30165#30372#0" expanded="false" />
+                    <element signature="e#30377#31180#0" expanded="false" />
+                    <element signature="e#30719#30834#0" expanded="false" />
+                    <element signature="e#30755#30833#0" expanded="false" />
+                    <element signature="e#30844#30990#0" expanded="false" />
+                    <element signature="e#30867#30989#1" expanded="false" />
+                    <element signature="e#31059#31148#0" expanded="false" />
+                    <element signature="e#31069#31122#1" expanded="false" />
+                    <element signature="e#31186#31537#0" expanded="false" />
+                    <element signature="e#31633#31728#0" expanded="false" />
+                    <element signature="e#31689#31727#0" expanded="false" />
+                    <element signature="e#31738#31855#0" expanded="false" />
+                    <element signature="e#31992#32510#0" expanded="false" />
+                    <element signature="e#32002#32485#1" expanded="false" />
+                    <element signature="e#32547#32691#0" expanded="false" />
+                    <element signature="e#32696#32803#0" expanded="false" />
+                    <element signature="e#32809#32896#0" expanded="false" />
+                    <element signature="e#33057#33119#0" expanded="false" />
+                    <element signature="e#33130#33255#0" expanded="false" />
+                    <element signature="e#33306#33501#0" expanded="false" />
+                    <element signature="e#33629#33670#0" expanded="false" />
+                    <element signature="e#34104#34221#0" expanded="false" />
+                    <element signature="e#34360#34581#0" expanded="false" />
+                    <element signature="e#34370#34556#1" expanded="false" />
+                    <element signature="e#34620#34691#0" expanded="false" />
+                    <element signature="e#34794#34885#0" expanded="false" />
+                    <element signature="e#34850#34884#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/lib/BehatApp/template_files/behat.yml" />
+        <option value="$PROJECT_DIR$/lib/BehatApp/BehatYml.php" />
+        <option value="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatBaseTests.php" />
+        <option value="$PROJECT_DIR$/lib/BehatApp/Exceptions/BehatAppException.php" />
+        <option value="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatHelperTest.php" />
+        <option value="$PROJECT_DIR$/lib/BehatApp/BehatHelper.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatGit.php" />
+        <option value="$PROJECT_DIR$/phpunit.xml" />
+        <option value="$PROJECT_DIR$/tests/bootstrap.php" />
+        <option value="$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Git/Repository/Repository.php" />
+        <option value="$PROJECT_DIR$/lib/BehatApp/GitHelper.php" />
+        <option value="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatGitTest.php" />
+        <option value="$PROJECT_DIR$/lib/BehatApp/BehatFeatureInterface.php" />
+        <option value="$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php" />
+        <option value="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
+    <option name="width" value="1276" />
+    <option name="height" value="778" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teqneers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-stream-wrapper-for-git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teqneers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-stream-wrapper-for-git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teqneers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-stream-wrapper-for-git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TQ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teqneers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-stream-wrapper-for-git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TQ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StreamWrapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teqneers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-stream-wrapper-for-git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TQ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teqneers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php-stream-wrapper-for-git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TQ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BehatAppTests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behat_product_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BehatApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Drupal/Behat2Build/behat-vagrant/public/b2" />
+    <property name="FullScreen" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="PublishConfig">
+    <servers>
+      <server id="97142e2c-2c04-4882-b65c-10095133a950">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="bb10251a-f36f-4965-9fa5-862b56f99f52">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage/default" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/BehatApp/Excpetions" />
+      <recent name="$PROJECT_DIR$/src/BehatApp" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/BehatApp/src/BehatApp" />
+      <recent name="$PROJECT_DIR$/tests/BehatApp/Tests" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value="ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="069026cd-e7fc-4acd-a9f5-c6ea0444ed73" name="Default" comment="" />
+      <created>1393767057656</created>
+      <updated>1393767057656</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1276" height="778" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29711142" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17736077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22021943" sideWeight="0.7028886" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29711142" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17736077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22021943" sideWeight="0.7028886" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Git/Repository/Repository.php</url>
+          <line>165</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/phpunit.xml.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="400" selection-end="652" vertical-scroll-proportion="0.32828283" vertical-offset="0" max-vertical-offset="594">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/tests/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="3" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.024311183" vertical-offset="0" max-vertical-offset="617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Vcs/Repository/AbstractRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="7" selection-start="2695" selection-end="2695" vertical-scroll-proportion="0.5369533" vertical-offset="814" max-vertical-offset="3480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/tests/TQ/Tests/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="27" selection-start="3238" selection-end="3238" vertical-scroll-proportion="0.3092006" vertical-offset="1130" max-vertical-offset="2520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/tests/TQ/Tests/Git/Repository/ModificationTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="27" selection-start="3743" selection-end="3743" vertical-scroll-proportion="0.09049774" vertical-offset="1200" max-vertical-offset="4710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/tests/TQ/Tests/Git/StreamWrapper/FileOperationTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5025">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/tests/TQ/Tests/Git/StreamWrapper/DirectoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="24" selection-start="1705" selection-end="1705" vertical-scroll-proportion="-3.4110787" vertical-offset="2625" max-vertical-offset="6795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatGitTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="17" selection-start="478" selection-end="478" vertical-scroll-proportion="0.4373178" vertical-offset="0" max-vertical-offset="2175">
+          <folding>
+            <element signature="e#172#211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BehatApp/GitHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="24" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding>
+            <element signature="e#27#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Git/Repository/Repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="27" selection-start="2902" selection-end="2902" vertical-scroll-proportion="0.0" vertical-offset="237" max-vertical-offset="3105">
+          <folding>
+            <element signature="e#1137#1296#0" expanded="false" />
+            <element signature="e#1443#1693#0" expanded="false" />
+            <element signature="e#1932#1991#0" expanded="false" />
+            <element signature="e#2017#2874#0" expanded="false" />
+            <element signature="e#3100#3182#1" expanded="false" />
+            <element signature="e#3397#3487#1" expanded="false" />
+            <element signature="e#4219#4311#1" expanded="false" />
+            <element signature="e#4386#4576#0" expanded="false" />
+            <element signature="e#4581#4827#0" expanded="false" />
+            <element signature="e#4833#5078#0" expanded="false" />
+            <element signature="e#5083#5308#0" expanded="false" />
+            <element signature="e#5153#5301#0" expanded="false" />
+            <element signature="e#5179#5300#1" expanded="false" />
+            <element signature="e#5314#5476#0" expanded="false" />
+            <element signature="e#5634#5705#0" expanded="false" />
+            <element signature="e#5710#5773#0" expanded="false" />
+            <element signature="e#5779#5859#0" expanded="false" />
+            <element signature="e#5864#6220#0" expanded="false" />
+            <element signature="e#5962#6082#0" expanded="false" />
+            <element signature="e#6021#6081#0" expanded="false" />
+            <element signature="e#6226#6651#0" expanded="false" />
+            <element signature="e#6656#7414#0" expanded="false" />
+            <element signature="e#6828#6884#0" expanded="false" />
+            <element signature="e#6979#7049#0" expanded="false" />
+            <element signature="e#7420#7612#0" expanded="false" />
+            <element signature="e#7617#8399#0" expanded="false" />
+            <element signature="e#8142#8288#0" expanded="false" />
+            <element signature="e#8197#8287#0" expanded="false" />
+            <element signature="e#8405#8628#0" expanded="false" />
+            <element signature="e#8633#9266#0" expanded="false" />
+            <element signature="e#9105#9259#0" expanded="false" />
+            <element signature="e#9128#9258#1" expanded="false" />
+            <element signature="e#9272#9624#0" expanded="false" />
+            <element signature="e#9629#10224#0" expanded="false" />
+            <element signature="e#10083#10217#0" expanded="false" />
+            <element signature="e#10106#10216#1" expanded="false" />
+            <element signature="e#10230#10508#0" expanded="false" />
+            <element signature="e#10513#11043#0" expanded="false" />
+            <element signature="e#10900#11036#0" expanded="false" />
+            <element signature="e#10923#11035#1" expanded="false" />
+            <element signature="e#11049#11865#0" expanded="false" />
+            <element signature="e#11870#13188#0" expanded="false" />
+            <element signature="e#13194#13863#0" expanded="false" />
+            <element signature="e#13868#14221#0" expanded="false" />
+            <element signature="e#14227#14794#0" expanded="false" />
+            <element signature="e#14799#15197#0" expanded="false" />
+            <element signature="e#15203#15751#0" expanded="false" />
+            <element signature="e#15756#16179#0" expanded="false" />
+            <element signature="e#16185#16481#0" expanded="false" />
+            <element signature="e#16486#17546#0" expanded="false" />
+            <element signature="e#16630#17504#0" expanded="false" />
+            <element signature="e#17552#19256#0" expanded="false" />
+            <element signature="e#19261#21398#0" expanded="false" />
+            <element signature="e#19423#19597#0" expanded="false" />
+            <element signature="e#19787#20990#0" expanded="false" />
+            <element signature="e#21020#21123#0" expanded="false" />
+            <element signature="e#21404#21675#0" expanded="false" />
+            <element signature="e#21680#27273#0" expanded="false" />
+            <element signature="e#21771#21827#0" expanded="false" />
+            <element signature="e#21861#26425#0" expanded="false" />
+            <element signature="e#26973#27086#0" expanded="false" />
+            <element signature="e#26996#27085#1" expanded="false" />
+            <element signature="e#27155#27244#0" expanded="false" />
+            <element signature="e#27165#27218#1" expanded="false" />
+            <element signature="e#27279#27440#0" expanded="false" />
+            <element signature="e#27445#27850#0" expanded="false" />
+            <element signature="e#27542#27667#0" expanded="false" />
+            <element signature="e#27596#27666#0" expanded="false" />
+            <element signature="e#27677#27805#0" expanded="false" />
+            <element signature="e#27700#27804#1" expanded="false" />
+            <element signature="e#27856#28062#0" expanded="false" />
+            <element signature="e#28067#28477#0" expanded="false" />
+            <element signature="e#28177#28290#0" expanded="false" />
+            <element signature="e#28231#28289#0" expanded="false" />
+            <element signature="e#28300#28431#0" expanded="false" />
+            <element signature="e#28323#28430#1" expanded="false" />
+            <element signature="e#28483#28978#0" expanded="false" />
+            <element signature="e#28983#30159#0" expanded="false" />
+            <element signature="e#29059#29155#0" expanded="false" />
+            <element signature="e#29215#29349#0" expanded="false" />
+            <element signature="e#29273#29317#0" expanded="false" />
+            <element signature="e#29359#29494#0" expanded="false" />
+            <element signature="e#29382#29493#1" expanded="false" />
+            <element signature="e#29705#29936#0" expanded="false" />
+            <element signature="e#29747#29826#0" expanded="false" />
+            <element signature="e#29843#29922#0" expanded="false" />
+            <element signature="e#30165#30372#0" expanded="false" />
+            <element signature="e#30377#31180#0" expanded="false" />
+            <element signature="e#30719#30834#0" expanded="false" />
+            <element signature="e#30755#30833#0" expanded="false" />
+            <element signature="e#30844#30990#0" expanded="false" />
+            <element signature="e#30867#30989#1" expanded="false" />
+            <element signature="e#31059#31148#0" expanded="false" />
+            <element signature="e#31069#31122#1" expanded="false" />
+            <element signature="e#31186#31537#0" expanded="false" />
+            <element signature="e#31633#31728#0" expanded="false" />
+            <element signature="e#31689#31727#0" expanded="false" />
+            <element signature="e#31738#31855#0" expanded="false" />
+            <element signature="e#31992#32510#0" expanded="false" />
+            <element signature="e#32002#32485#1" expanded="false" />
+            <element signature="e#32547#32691#0" expanded="false" />
+            <element signature="e#32696#32803#0" expanded="false" />
+            <element signature="e#32809#32896#0" expanded="false" />
+            <element signature="e#33057#33119#0" expanded="false" />
+            <element signature="e#33130#33255#0" expanded="false" />
+            <element signature="e#33306#33501#0" expanded="false" />
+            <element signature="e#33629#33670#0" expanded="false" />
+            <element signature="e#34104#34221#0" expanded="false" />
+            <element signature="e#34360#34581#0" expanded="false" />
+            <element signature="e#34370#34556#1" expanded="false" />
+            <element signature="e#34620#34691#0" expanded="false" />
+            <element signature="e#34794#34885#0" expanded="false" />
+            <element signature="e#34850#34884#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="31" selection-start="1763" selection-end="1774" vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1500">
+          <folding>
+            <element signature="e#194#289#0" expanded="false" />
+            <element signature="e#1182#1468#0" expanded="false" />
+            <element signature="e#1473#1741#0" expanded="false" />
+            <element signature="e#1534#1713#0" expanded="false" />
+            <element signature="e#1647#1713#0" expanded="false" />
+            <element signature="e#1747#1904#0" expanded="false" />
+            <element signature="e#1791#1865#0" expanded="false" />
+            <element signature="e#1910#2355#0" expanded="false" />
+            <element signature="e#1969#2327#0" expanded="false" />
+            <element signature="e#2270#2327#0" expanded="false" />
+            <element signature="e#2361#2632#0" expanded="false" />
+            <element signature="e#2428#2604#0" expanded="false" />
+            <element signature="e#2539#2604#0" expanded="false" />
+            <element signature="e#2638#2823#0" expanded="false" />
+            <element signature="e#2685#2781#0" expanded="false" />
+            <element signature="e#2829#2975#0" expanded="false" />
+            <element signature="e#2872#2937#0" expanded="false" />
+            <element signature="e#2981#3080#0" expanded="false" />
+            <element signature="e#3086#3187#0" expanded="false" />
+            <element signature="e#3193#3359#0" expanded="false" />
+            <element signature="e#3241#3316#0" expanded="false" />
+            <element signature="e#3365#3620#0" expanded="false" />
+            <element signature="e#3425#3592#0" expanded="false" />
+            <element signature="e#3505#3592#0" expanded="false" />
+            <element signature="e#3626#3794#0" expanded="false" />
+            <element signature="e#3675#3751#0" expanded="false" />
+            <element signature="e#3800#4059#0" expanded="false" />
+            <element signature="e#3861#4031#0" expanded="false" />
+            <element signature="e#3973#4031#0" expanded="false" />
+            <element signature="e#4065#4294#0" expanded="false" />
+            <element signature="e#4300#4647#0" expanded="false" />
+            <element signature="e#4378#4619#0" expanded="false" />
+            <element signature="e#4480#4619#0" expanded="false" />
+            <element signature="e#4654#4797#0" expanded="false" />
+            <element signature="e#4803#5065#0" expanded="false" />
+            <element signature="e#4862#5037#0" expanded="false" />
+            <element signature="e#4940#5037#0" expanded="false" />
+            <element signature="e#5071#5202#0" expanded="false" />
+            <element signature="e#5208#5441#0" expanded="false" />
+            <element signature="e#5264#5413#0" expanded="false" />
+            <element signature="e#5360#5413#0" expanded="false" />
+            <element signature="e#5447#5753#0" expanded="false" />
+            <element signature="e#5631#5725#0" expanded="false" />
+            <element signature="e#5759#6041#0" expanded="false" />
+            <element signature="e#5821#6013#0" expanded="false" />
+            <element signature="e#5948#6013#0" expanded="false" />
+            <element signature="e#6047#6202#0" expanded="false" />
+            <element signature="e#6208#6535#0" expanded="false" />
+            <element signature="e#6274#6507#0" expanded="false" />
+            <element signature="e#6385#6507#0" expanded="false" />
+            <element signature="e#6541#6625#0" expanded="false" />
+            <element signature="e#6631#6803#0" expanded="false" />
+            <element signature="e#6809#6974#0" expanded="false" />
+            <element signature="e#6980#7066#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatBaseTests.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="55" selection-start="1837" selection-end="1842" vertical-scroll-proportion="0.33282906" vertical-offset="470" max-vertical-offset="1620">
+          <folding>
+            <element signature="e#696#761#0" expanded="false" />
+            <element signature="e#767#811#0" expanded="false" />
+            <element signature="e#817#888#0" expanded="false" />
+            <element signature="e#894#959#0" expanded="false" />
+            <element signature="e#2627#2968#0" expanded="false" />
+            <element signature="e#2685#2939#0" expanded="false" />
+            <element signature="e#2974#3579#0" expanded="false" />
+            <element signature="e#3032#3551#0" expanded="false" />
+            <element signature="e#3585#3666#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatAppBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="6" selection-start="34" selection-end="34" vertical-scroll-proportion="0.06656805" vertical-offset="0" max-vertical-offset="676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatFeatureInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="50" selection-start="384" selection-end="384" vertical-scroll-proportion="0.22189349" vertical-offset="0" max-vertical-offset="676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="58" selection-start="4184" selection-end="4184" vertical-scroll-proportion="0.5701358" vertical-offset="192" max-vertical-offset="915">
+          <folding>
+            <element signature="e#889#959#0" expanded="false" />
+            <element signature="e#965#1046#0" expanded="false" />
+            <element signature="e#1052#1695#0" expanded="false" />
+            <element signature="e#1186#1689#0" expanded="false" />
+            <element signature="e#1319#1689#0" expanded="false" />
+            <element signature="e#1338#1478#0" expanded="false" />
+            <element signature="e#1701#1963#0" expanded="false" />
+            <element signature="e#1743#1933#0" expanded="false" />
+            <element signature="e#1969#2406#0" expanded="false" />
+            <element signature="e#2083#2377#0" expanded="false" />
+            <element signature="e#2216#2377#0" expanded="false" />
+            <element signature="e#2244#2299#0" expanded="false" />
+            <element signature="e#2244#2335#0" expanded="false" />
+            <element signature="e#2412#3178#0" expanded="false" />
+            <element signature="e#2518#2650#0" expanded="false" />
+            <element signature="e#2659#3084#0" expanded="false" />
+            <element signature="e#2812#3084#0" expanded="false" />
+            <element signature="e#2831#3074#0" expanded="false" />
+            <element signature="e#2946#3074#0" expanded="false" />
+            <element signature="e#3184#3356#0" expanded="false" />
+            <element signature="e#3254#3350#0" expanded="false" />
+            <element signature="e#3362#4124#0" expanded="false" />
+            <element signature="e#3556#4118#0" expanded="false" />
+            <element signature="e#3709#3856#0" expanded="false" />
+            <element signature="e#3857#4118#0" expanded="false" />
+            <element signature="e#3876#4108#0" expanded="false" />
+            <element signature="e#3965#4108#0" expanded="false" />
+            <element signature="e#4130#4302#0" expanded="false" />
+            <element signature="e#4200#4296#0" expanded="false" />
+            <element signature="e#4308#4439#0" expanded="false" />
+            <element signature="e#4444#5027#0" expanded="false" />
+            <element signature="e#4722#4997#0" expanded="false" />
+            <element signature="e#4750#4805#0" expanded="false" />
+            <element signature="e#4750#4840#0" expanded="false" />
+            <element signature="e#4860#4997#0" expanded="false" />
+            <element signature="e#5033#5510#0" expanded="false" />
+            <element signature="e#5283#5362#0" expanded="false" />
+            <element signature="e#5283#5419#0" expanded="false" />
+            <element signature="e#5283#5479#0" expanded="false" />
+            <element signature="e#5516#6026#0" expanded="false" />
+            <element signature="e#5562#5656#0" expanded="false" />
+            <element signature="e#5666#5778#0" expanded="false" />
+            <element signature="e#5788#5884#0" expanded="false" />
+            <element signature="e#5894#5997#0" expanded="false" />
+            <element signature="e#6032#6227#0" expanded="false" />
+            <element signature="e#6095#6221#0" expanded="false" />
+            <element signature="e#6233#6411#0" expanded="false" />
+            <element signature="e#6417#6612#0" expanded="false" />
+            <element signature="e#6481#6606#0" expanded="false" />
+            <element signature="e#6618#6913#0" expanded="false" />
+            <element signature="e#6671#6882#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="369" column="0" selection-start="15463" selection-end="15463" vertical-scroll-proportion="-0.85860056" vertical-offset="6094" max-vertical-offset="6780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

@@ -2,6 +2,7 @@
 
 use BehatApp\Exceptions\BehatAppException;
 use BehatApp\BehatHelper;
+use BehatApp\GitHelper;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Filesystem\Exception\IOException;
@@ -9,15 +10,19 @@ use Symfony\Component\Filesystem\Exception\IOException;
 class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
 
     public      $model;
+    public      $vcs;
+    public      $gitHelper;
+    public      $root_git_folder;
     protected   $finder;
     protected   $filesystem;
+    public      $helper;
 
     public function __construct(Filesystem $filesystem = null, Finder $finder = null)
     {
         $this->model        = $this->newModel();
         $this->finder       = ($finder == null) ? new Finder() : $finder;
         $this->filesystem   = ($filesystem == null) ? new Filesystem() : $filesystem;
-        $this->helper       = new BehatHelper;
+        $this->helper       = new BehatHelper();
     }
 
     public function getNewModel()
@@ -29,9 +34,11 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         $this->model = $model;
     }
 
-    public function create(array $params)
+    public function create(array $params, $vcs)
     {
+
         list($content, $destination) = $params;
+        $this->vcs = $vcs;
         if($this->filesystem->exists($destination)) {
             throw new BehatAppException("File already exists $destination");
         } else {
@@ -39,8 +46,18 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
                 return array('error' => 1, 'message' => $output, 'data' => $content);
             }
             $this->filesystem->dumpFile($destination, $content, $mode = 0775);
+            $this->gitUpdate();
             return array('error' => 0, 'message' => 'Save Complete', 'data' => $content);
         }
+    }
+
+    public function gitUpdate()
+    {
+        if($this->vcs->isDirty()) {
+            $output = $this->vcs->add(null, TRUE);
+            $output .= $this->vcs->commit("Commit from behat editor", null, $author = null, array());
+        }
+        return $output;
     }
 
     public function getAll(array $params)
@@ -58,7 +75,7 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         return $files;
     }
 
-    public function update(array $params)
+    public function update(array $params, $vcs)
     {
         list($content, $destination) = $params;
         if($output = $this->validate($content)){
@@ -77,15 +94,14 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         return array('error' => 0, 'message' => 'Update Complete', 'data' => $content);
     }
 
-    public function updateMany(array $files_and_path)
+    public function updateMany(array $files_and_path, $vcs)
     {
         foreach($files_and_path as $file_and_path){
             $this->update($file_and_path);
         }
     }
 
-
-    public function delete($folder_path)
+    public function delete($folder_path, $vcs)
     {
         $filename   = explode('/', $folder_path);
         $filename   = array_slice($filename, -1);
@@ -105,7 +121,7 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         }
     }
 
-    public function deleteMany(array $files_and_path)
+    public function deleteMany(array $files_and_path, $vcs)
     {
         foreach($files_and_path as $file_and_path){
             $this->delete($file_and_path);

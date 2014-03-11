@@ -10,6 +10,10 @@
          stopOnFailure="false"
          syntaxCheck="false"
         >
+<php>
+    <const name="GIT_BINARY" value="/usr/bin/git"/>
+    <const name="TEST_REPO_PATH" value="false"/>
+</php>
 <testsuites>
     <testsuite name="BehatApp Test Suite">
         <directory>tests</directory>
