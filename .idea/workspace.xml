@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="069026cd-e7fc-4acd-a9f5-c6ea0444ed73" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php" afterPath="$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="behat_product_core.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,13 +24,22 @@
     <favorites_list name="behat_product_core" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.63479626">
+    <splitter split-orientation="horizontal" split-proportion="0.5289969">
       <split-first>
         <leaf>
           <file leaf-file-name="BehatFeatureModelTest.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="81" column="38" selection-start="3001" selection-end="3019" vertical-scroll-proportion="0.2186589" vertical-offset="1035" max-vertical-offset="6660">
+                <state line="370" column="6" selection-start="15721" selection-end="15721" vertical-scroll-proportion="0.066103" vertical-offset="5434" max-vertical-offset="6735">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="BehatBaseTests.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatBaseTests.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="10" column="6" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="2190">
                   <folding />
                 </state>
               </provider>
@@ -41,10 +49,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="BehatFeatureModel.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="BehatFeatureModel.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="123" column="58" selection-start="4184" selection-end="4184" vertical-scroll-proportion="0.5701358" vertical-offset="192" max-vertical-offset="915">
+                <state line="123" column="58" selection-start="4184" selection-end="4184" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="915">
                   <folding>
                     <element signature="e#889#959#0" expanded="false" />
                     <element signature="e#965#1046#0" expanded="false" />
@@ -113,74 +121,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BehatHelper.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatHelper.php">
+          <file leaf-file-name="CallResult.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Vcs/Cli/CallResult.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="69" column="31" selection-start="1763" selection-end="1774" vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1500">
-                  <folding>
-                    <element signature="e#194#289#0" expanded="false" />
-                    <element signature="e#1182#1468#0" expanded="false" />
-                    <element signature="e#1473#1741#0" expanded="false" />
-                    <element signature="e#1534#1713#0" expanded="false" />
-                    <element signature="e#1647#1713#0" expanded="false" />
-                    <element signature="e#1747#1904#0" expanded="false" />
-                    <element signature="e#1791#1865#0" expanded="false" />
-                    <element signature="e#1910#2355#0" expanded="false" />
-                    <element signature="e#1969#2327#0" expanded="false" />
-                    <element signature="e#2270#2327#0" expanded="false" />
-                    <element signature="e#2361#2632#0" expanded="false" />
-                    <element signature="e#2428#2604#0" expanded="false" />
-                    <element signature="e#2539#2604#0" expanded="false" />
-                    <element signature="e#2638#2823#0" expanded="false" />
-                    <element signature="e#2685#2781#0" expanded="false" />
-                    <element signature="e#2829#2975#0" expanded="false" />
-                    <element signature="e#2872#2937#0" expanded="false" />
-                    <element signature="e#2981#3080#0" expanded="false" />
-                    <element signature="e#3086#3187#0" expanded="false" />
-                    <element signature="e#3193#3359#0" expanded="false" />
-                    <element signature="e#3241#3316#0" expanded="false" />
-                    <element signature="e#3365#3620#0" expanded="false" />
-                    <element signature="e#3425#3592#0" expanded="false" />
-                    <element signature="e#3505#3592#0" expanded="false" />
-                    <element signature="e#3626#3794#0" expanded="false" />
-                    <element signature="e#3675#3751#0" expanded="false" />
-                    <element signature="e#3800#4059#0" expanded="false" />
-                    <element signature="e#3861#4031#0" expanded="false" />
-                    <element signature="e#3973#4031#0" expanded="false" />
-                    <element signature="e#4065#4294#0" expanded="false" />
-                    <element signature="e#4300#4647#0" expanded="false" />
-                    <element signature="e#4378#4619#0" expanded="false" />
-                    <element signature="e#4480#4619#0" expanded="false" />
-                    <element signature="e#4654#4797#0" expanded="false" />
-                    <element signature="e#4803#5065#0" expanded="false" />
-                    <element signature="e#4862#5037#0" expanded="false" />
-                    <element signature="e#4940#5037#0" expanded="false" />
-                    <element signature="e#5071#5202#0" expanded="false" />
-                    <element signature="e#5208#5441#0" expanded="false" />
-                    <element signature="e#5264#5413#0" expanded="false" />
-                    <element signature="e#5360#5413#0" expanded="false" />
-                    <element signature="e#5447#5753#0" expanded="false" />
-                    <element signature="e#5631#5725#0" expanded="false" />
-                    <element signature="e#5759#6041#0" expanded="false" />
-                    <element signature="e#5821#6013#0" expanded="false" />
-                    <element signature="e#5948#6013#0" expanded="false" />
-                    <element signature="e#6047#6202#0" expanded="false" />
-                    <element signature="e#6208#6535#0" expanded="false" />
-                    <element signature="e#6274#6507#0" expanded="false" />
-                    <element signature="e#6385#6507#0" expanded="false" />
-                    <element signature="e#6541#6625#0" expanded="false" />
-                    <element signature="e#6631#6803#0" expanded="false" />
-                    <element signature="e#6809#6974#0" expanded="false" />
-                    <element signature="e#6980#7066#0" expanded="false" />
-                  </folding>
+                <state line="241" column="0" selection-start="5993" selection-end="5993" vertical-scroll-proportion="0.0" vertical-offset="2817" max-vertical-offset="3480">
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Repository.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Repository.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Git/Repository/Repository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="77" column="27" selection-start="2902" selection-end="2902" vertical-scroll-proportion="0.0" vertical-offset="237" max-vertical-offset="3105">
+                <state line="899" column="0" selection-start="32728" selection-end="32728" vertical-scroll-proportion="0.25172678" vertical-offset="1892" max-vertical-offset="3195">
                   <folding>
                     <element signature="e#1137#1296#0" expanded="false" />
                     <element signature="e#1443#1693#0" expanded="false" />
@@ -277,13 +230,10 @@
                     <element signature="e#31059#31148#0" expanded="false" />
                     <element signature="e#31069#31122#1" expanded="false" />
                     <element signature="e#31186#31537#0" expanded="false" />
-                    <element signature="e#31633#31728#0" expanded="false" />
                     <element signature="e#31689#31727#0" expanded="false" />
-                    <element signature="e#31738#31855#0" expanded="false" />
                     <element signature="e#31992#32510#0" expanded="false" />
                     <element signature="e#32002#32485#1" expanded="false" />
                     <element signature="e#32547#32691#0" expanded="false" />
-                    <element signature="e#32696#32803#0" expanded="false" />
                     <element signature="e#32809#32896#0" expanded="false" />
                     <element signature="e#33057#33119#0" expanded="false" />
                     <element signature="e#33130#33255#0" expanded="false" />
@@ -341,9 +291,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="1278" />
     <option name="y" value="22" />
-    <option name="width" value="1276" />
-    <option name="height" value="778" />
+    <option name="width" value="1278" />
+    <option name="height" value="1418" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -751,7 +702,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1276" height="778" extended-state="0" />
+    <frame x="1278" y="22" width="1278" height="1418" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -817,20 +768,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/phpunit.xml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="400" selection-end="652" vertical-scroll-proportion="0.32828283" vertical-offset="0" max-vertical-offset="594">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/tests/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="3" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.024311183" vertical-offset="0" max-vertical-offset="617">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Vcs/Repository/AbstractRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="98" column="7" selection-start="2695" selection-end="2695" vertical-scroll-proportion="0.5369533" vertical-offset="814" max-vertical-offset="3480">
@@ -875,6 +812,262 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatAppBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="6" selection-start="34" selection-end="34" vertical-scroll-proportion="0.06656805" vertical-offset="0" max-vertical-offset="676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatFeatureInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="50" selection-start="384" selection-end="384" vertical-scroll-proportion="0.22189349" vertical-offset="0" max-vertical-offset="676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="58" selection-start="4184" selection-end="4184" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="915">
+          <folding>
+            <element signature="e#889#959#0" expanded="false" />
+            <element signature="e#965#1046#0" expanded="false" />
+            <element signature="e#1052#1695#0" expanded="false" />
+            <element signature="e#1186#1689#0" expanded="false" />
+            <element signature="e#1319#1689#0" expanded="false" />
+            <element signature="e#1338#1478#0" expanded="false" />
+            <element signature="e#1701#1963#0" expanded="false" />
+            <element signature="e#1743#1933#0" expanded="false" />
+            <element signature="e#1969#2406#0" expanded="false" />
+            <element signature="e#2083#2377#0" expanded="false" />
+            <element signature="e#2216#2377#0" expanded="false" />
+            <element signature="e#2244#2299#0" expanded="false" />
+            <element signature="e#2244#2335#0" expanded="false" />
+            <element signature="e#2412#3178#0" expanded="false" />
+            <element signature="e#2518#2650#0" expanded="false" />
+            <element signature="e#2659#3084#0" expanded="false" />
+            <element signature="e#2812#3084#0" expanded="false" />
+            <element signature="e#2831#3074#0" expanded="false" />
+            <element signature="e#2946#3074#0" expanded="false" />
+            <element signature="e#3184#3356#0" expanded="false" />
+            <element signature="e#3254#3350#0" expanded="false" />
+            <element signature="e#3362#4124#0" expanded="false" />
+            <element signature="e#3556#4118#0" expanded="false" />
+            <element signature="e#3709#3856#0" expanded="false" />
+            <element signature="e#3857#4118#0" expanded="false" />
+            <element signature="e#3876#4108#0" expanded="false" />
+            <element signature="e#3965#4108#0" expanded="false" />
+            <element signature="e#4130#4302#0" expanded="false" />
+            <element signature="e#4200#4296#0" expanded="false" />
+            <element signature="e#4308#4439#0" expanded="false" />
+            <element signature="e#4444#5027#0" expanded="false" />
+            <element signature="e#4722#4997#0" expanded="false" />
+            <element signature="e#4750#4805#0" expanded="false" />
+            <element signature="e#4750#4840#0" expanded="false" />
+            <element signature="e#4860#4997#0" expanded="false" />
+            <element signature="e#5033#5510#0" expanded="false" />
+            <element signature="e#5283#5362#0" expanded="false" />
+            <element signature="e#5283#5419#0" expanded="false" />
+            <element signature="e#5283#5479#0" expanded="false" />
+            <element signature="e#5516#6026#0" expanded="false" />
+            <element signature="e#5562#5656#0" expanded="false" />
+            <element signature="e#5666#5778#0" expanded="false" />
+            <element signature="e#5788#5884#0" expanded="false" />
+            <element signature="e#5894#5997#0" expanded="false" />
+            <element signature="e#6032#6227#0" expanded="false" />
+            <element signature="e#6095#6221#0" expanded="false" />
+            <element signature="e#6233#6411#0" expanded="false" />
+            <element signature="e#6417#6612#0" expanded="false" />
+            <element signature="e#6481#6606#0" expanded="false" />
+            <element signature="e#6618#6913#0" expanded="false" />
+            <element signature="e#6671#6882#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/filesystem/Symfony/Component/Filesystem/Filesystem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="6" selection-start="525" selection-end="525" vertical-scroll-proportion="0.196793" vertical-offset="0" max-vertical-offset="930">
+          <folding>
+            <element signature="e#402#518#0" expanded="false" />
+            <element signature="e#542#1078#0" expanded="false" />
+            <element signature="e#1083#2164#0" expanded="false" />
+            <element signature="e#1163#1374#0" expanded="false" />
+            <element signature="e#1429#1645#0" expanded="false" />
+            <element signature="e#1601#1645#0" expanded="false" />
+            <element signature="e#1655#2158#0" expanded="false" />
+            <element signature="e#1978#2148#0" expanded="false" />
+            <element signature="e#2170#2426#0" expanded="false" />
+            <element signature="e#2431#2784#0" expanded="false" />
+            <element signature="e#2488#2778#0" expanded="false" />
+            <element signature="e#2545#2604#0" expanded="false" />
+            <element signature="e#2618#2768#0" expanded="false" />
+            <element signature="e#2790#3046#0" expanded="false" />
+            <element signature="e#3051#3263#0" expanded="false" />
+            <element signature="e#3096#3235#0" expanded="false" />
+            <element signature="e#3155#3225#0" expanded="false" />
+            <element signature="e#3269#3668#0" expanded="false" />
+            <element signature="e#3673#4028#0" expanded="false" />
+            <element signature="e#3746#4022#0" expanded="false" />
+            <element signature="e#3880#4012#0" expanded="false" />
+            <element signature="e#4034#4257#0" expanded="false" />
+            <element signature="e#4262#5420#0" expanded="false" />
+            <element signature="e#4410#5414#0" expanded="false" />
+            <element signature="e#4450#4535#0" expanded="false" />
+            <element signature="e#4549#5404#0" expanded="false" />
+            <element signature="e#4669#4827#0" expanded="false" />
+            <element signature="e#4842#5404#0" expanded="false" />
+            <element signature="e#4922#5390#0" expanded="false" />
+            <element signature="e#5003#5164#0" expanded="false" />
+            <element signature="e#5183#5390#0" expanded="false" />
+            <element signature="e#5426#5918#0" expanded="false" />
+            <element signature="e#5923#6408#0" expanded="false" />
+            <element signature="e#6009#6402#0" expanded="false" />
+            <element signature="e#6068#6218#0" expanded="false" />
+            <element signature="e#6231#6392#0" expanded="false" />
+            <element signature="e#6414#6842#0" expanded="false" />
+            <element signature="e#6847#7586#0" expanded="false" />
+            <element signature="e#6918#7580#0" expanded="false" />
+            <element signature="e#6977#7119#0" expanded="false" />
+            <element signature="e#7132#7570#0" expanded="false" />
+            <element signature="e#7199#7359#0" expanded="false" />
+            <element signature="e#7374#7570#0" expanded="false" />
+            <element signature="e#7397#7556#0" expanded="false" />
+            <element signature="e#7592#8011#0" expanded="false" />
+            <element signature="e#8016#8759#0" expanded="false" />
+            <element signature="e#8088#8753#0" expanded="false" />
+            <element signature="e#8147#8290#0" expanded="false" />
+            <element signature="e#8303#8743#0" expanded="false" />
+            <element signature="e#8370#8531#0" expanded="false" />
+            <element signature="e#8546#8743#0" expanded="false" />
+            <element signature="e#8569#8729#0" expanded="false" />
+            <element signature="e#8765#9172#0" expanded="false" />
+            <element signature="e#9177#9657#0" expanded="false" />
+            <element signature="e#9299#9479#0" expanded="false" />
+            <element signature="e#9489#9651#0" expanded="false" />
+            <element signature="e#9663#9982#0" expanded="false" />
+            <element signature="e#9987#11184#0" expanded="false" />
+            <element signature="e#10073#10207#0" expanded="false" />
+            <element signature="e#10282#10478#0" expanded="false" />
+            <element signature="e#10321#10468#0" expanded="false" />
+            <element signature="e#10420#10468#0" expanded="false" />
+            <element signature="e#10488#11178#0" expanded="false" />
+            <element signature="e#10512#11168#0" expanded="false" />
+            <element signature="e#10621#11007#0" expanded="false" />
+            <element signature="e#10666#10989#0" expanded="false" />
+            <element signature="e#11190#11489#0" expanded="false" />
+            <element signature="e#11494#12784#0" expanded="false" />
+            <element signature="e#11606#11765#0" expanded="false" />
+            <element signature="e#12011#12160#0" expanded="false" />
+            <element signature="e#12790#13611#0" expanded="false" />
+            <element signature="e#13616#16183#0" expanded="false" />
+            <element signature="e#13891#14555#0" expanded="false" />
+            <element signature="e#14028#14290#0" expanded="false" />
+            <element signature="e#14303#14545#0" expanded="false" />
+            <element signature="e#14441#14531#0" expanded="false" />
+            <element signature="e#14597#14737#0" expanded="false" />
+            <element signature="e#14747#15073#0" expanded="false" />
+            <element signature="e#15083#16177#0" expanded="false" />
+            <element signature="e#15208#16167#0" expanded="false" />
+            <element signature="e#15246#15633#0" expanded="false" />
+            <element signature="e#15413#15498#0" expanded="false" />
+            <element signature="e#15499#15633#0" expanded="false" />
+            <element signature="e#15648#16167#0" expanded="false" />
+            <element signature="e#15671#16153#0" expanded="false" />
+            <element signature="e#15780#15865#0" expanded="false" />
+            <element signature="e#15866#16018#0" expanded="false" />
+            <element signature="e#16019#16153#0" expanded="false" />
+            <element signature="e#16189#16334#0" expanded="false" />
+            <element signature="e#16339#16722#0" expanded="false" />
+            <element signature="e#16391#16693#0" expanded="false" />
+            <element signature="e#16728#17040#0" expanded="false" />
+            <element signature="e#17045#17697#0" expanded="false" />
+            <element signature="e#17155#17364#0" expanded="false" />
+            <element signature="e#17218#17364#0" expanded="false" />
+            <element signature="e#17430#17600#0" expanded="false" />
+            <element signature="e#17703#17776#0" expanded="false" />
+            <element signature="e#17781#17991#0" expanded="false" />
+            <element signature="e#17831#17961#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatBaseTests.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="6" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="2190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Vcs/Cli/CallResult.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="241" column="0" selection-start="5993" selection-end="5993" vertical-scroll-proportion="0.0" vertical-offset="2817" max-vertical-offset="3480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="31" selection-start="1763" selection-end="1774" vertical-scroll-proportion="0.5408163" vertical-offset="274" max-vertical-offset="1500">
+          <folding>
+            <element signature="e#194#289#0" expanded="false" />
+            <element signature="e#1182#1468#0" expanded="false" />
+            <element signature="e#1473#1741#0" expanded="false" />
+            <element signature="e#1534#1713#0" expanded="false" />
+            <element signature="e#1647#1713#0" expanded="false" />
+            <element signature="e#1747#1904#0" expanded="false" />
+            <element signature="e#1791#1865#0" expanded="false" />
+            <element signature="e#1910#2355#0" expanded="false" />
+            <element signature="e#1969#2327#0" expanded="false" />
+            <element signature="e#2270#2327#0" expanded="false" />
+            <element signature="e#2361#2632#0" expanded="false" />
+            <element signature="e#2428#2604#0" expanded="false" />
+            <element signature="e#2539#2604#0" expanded="false" />
+            <element signature="e#2638#2823#0" expanded="false" />
+            <element signature="e#2685#2781#0" expanded="false" />
+            <element signature="e#2829#2975#0" expanded="false" />
+            <element signature="e#2872#2937#0" expanded="false" />
+            <element signature="e#2981#3080#0" expanded="false" />
+            <element signature="e#3086#3187#0" expanded="false" />
+            <element signature="e#3193#3359#0" expanded="false" />
+            <element signature="e#3241#3316#0" expanded="false" />
+            <element signature="e#3365#3620#0" expanded="false" />
+            <element signature="e#3425#3592#0" expanded="false" />
+            <element signature="e#3505#3592#0" expanded="false" />
+            <element signature="e#3626#3794#0" expanded="false" />
+            <element signature="e#3675#3751#0" expanded="false" />
+            <element signature="e#3800#4059#0" expanded="false" />
+            <element signature="e#3861#4031#0" expanded="false" />
+            <element signature="e#3973#4031#0" expanded="false" />
+            <element signature="e#4065#4294#0" expanded="false" />
+            <element signature="e#4300#4647#0" expanded="false" />
+            <element signature="e#4378#4619#0" expanded="false" />
+            <element signature="e#4480#4619#0" expanded="false" />
+            <element signature="e#4654#4797#0" expanded="false" />
+            <element signature="e#4803#5065#0" expanded="false" />
+            <element signature="e#4862#5037#0" expanded="false" />
+            <element signature="e#4940#5037#0" expanded="false" />
+            <element signature="e#5071#5202#0" expanded="false" />
+            <element signature="e#5208#5441#0" expanded="false" />
+            <element signature="e#5264#5413#0" expanded="false" />
+            <element signature="e#5360#5413#0" expanded="false" />
+            <element signature="e#5447#5753#0" expanded="false" />
+            <element signature="e#5631#5725#0" expanded="false" />
+            <element signature="e#5759#6041#0" expanded="false" />
+            <element signature="e#5821#6013#0" expanded="false" />
+            <element signature="e#5948#6013#0" expanded="false" />
+            <element signature="e#6047#6202#0" expanded="false" />
+            <element signature="e#6208#6535#0" expanded="false" />
+            <element signature="e#6274#6507#0" expanded="false" />
+            <element signature="e#6385#6507#0" expanded="false" />
+            <element signature="e#6541#6625#0" expanded="false" />
+            <element signature="e#6631#6803#0" expanded="false" />
+            <element signature="e#6809#6974#0" expanded="false" />
+            <element signature="e#6980#7066#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/BehatApp/GitHelper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="24" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
@@ -886,7 +1079,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/teqneers/php-stream-wrapper-for-git/src/TQ/Git/Repository/Repository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="27" selection-start="2902" selection-end="2902" vertical-scroll-proportion="0.0" vertical-offset="237" max-vertical-offset="3105">
+        <state line="899" column="0" selection-start="32728" selection-end="32728" vertical-scroll-proportion="0.25172678" vertical-offset="1892" max-vertical-offset="3195">
           <folding>
             <element signature="e#1137#1296#0" expanded="false" />
             <element signature="e#1443#1693#0" expanded="false" />
@@ -983,13 +1176,10 @@
             <element signature="e#31059#31148#0" expanded="false" />
             <element signature="e#31069#31122#1" expanded="false" />
             <element signature="e#31186#31537#0" expanded="false" />
-            <element signature="e#31633#31728#0" expanded="false" />
             <element signature="e#31689#31727#0" expanded="false" />
-            <element signature="e#31738#31855#0" expanded="false" />
             <element signature="e#31992#32510#0" expanded="false" />
             <element signature="e#32002#32485#1" expanded="false" />
             <element signature="e#32547#32691#0" expanded="false" />
-            <element signature="e#32696#32803#0" expanded="false" />
             <element signature="e#32809#32896#0" expanded="false" />
             <element signature="e#33057#33119#0" expanded="false" />
             <element signature="e#33130#33255#0" expanded="false" />
@@ -1005,161 +1195,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="31" selection-start="1763" selection-end="1774" vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1500">
-          <folding>
-            <element signature="e#194#289#0" expanded="false" />
-            <element signature="e#1182#1468#0" expanded="false" />
-            <element signature="e#1473#1741#0" expanded="false" />
-            <element signature="e#1534#1713#0" expanded="false" />
-            <element signature="e#1647#1713#0" expanded="false" />
-            <element signature="e#1747#1904#0" expanded="false" />
-            <element signature="e#1791#1865#0" expanded="false" />
-            <element signature="e#1910#2355#0" expanded="false" />
-            <element signature="e#1969#2327#0" expanded="false" />
-            <element signature="e#2270#2327#0" expanded="false" />
-            <element signature="e#2361#2632#0" expanded="false" />
-            <element signature="e#2428#2604#0" expanded="false" />
-            <element signature="e#2539#2604#0" expanded="false" />
-            <element signature="e#2638#2823#0" expanded="false" />
-            <element signature="e#2685#2781#0" expanded="false" />
-            <element signature="e#2829#2975#0" expanded="false" />
-            <element signature="e#2872#2937#0" expanded="false" />
-            <element signature="e#2981#3080#0" expanded="false" />
-            <element signature="e#3086#3187#0" expanded="false" />
-            <element signature="e#3193#3359#0" expanded="false" />
-            <element signature="e#3241#3316#0" expanded="false" />
-            <element signature="e#3365#3620#0" expanded="false" />
-            <element signature="e#3425#3592#0" expanded="false" />
-            <element signature="e#3505#3592#0" expanded="false" />
-            <element signature="e#3626#3794#0" expanded="false" />
-            <element signature="e#3675#3751#0" expanded="false" />
-            <element signature="e#3800#4059#0" expanded="false" />
-            <element signature="e#3861#4031#0" expanded="false" />
-            <element signature="e#3973#4031#0" expanded="false" />
-            <element signature="e#4065#4294#0" expanded="false" />
-            <element signature="e#4300#4647#0" expanded="false" />
-            <element signature="e#4378#4619#0" expanded="false" />
-            <element signature="e#4480#4619#0" expanded="false" />
-            <element signature="e#4654#4797#0" expanded="false" />
-            <element signature="e#4803#5065#0" expanded="false" />
-            <element signature="e#4862#5037#0" expanded="false" />
-            <element signature="e#4940#5037#0" expanded="false" />
-            <element signature="e#5071#5202#0" expanded="false" />
-            <element signature="e#5208#5441#0" expanded="false" />
-            <element signature="e#5264#5413#0" expanded="false" />
-            <element signature="e#5360#5413#0" expanded="false" />
-            <element signature="e#5447#5753#0" expanded="false" />
-            <element signature="e#5631#5725#0" expanded="false" />
-            <element signature="e#5759#6041#0" expanded="false" />
-            <element signature="e#5821#6013#0" expanded="false" />
-            <element signature="e#5948#6013#0" expanded="false" />
-            <element signature="e#6047#6202#0" expanded="false" />
-            <element signature="e#6208#6535#0" expanded="false" />
-            <element signature="e#6274#6507#0" expanded="false" />
-            <element signature="e#6385#6507#0" expanded="false" />
-            <element signature="e#6541#6625#0" expanded="false" />
-            <element signature="e#6631#6803#0" expanded="false" />
-            <element signature="e#6809#6974#0" expanded="false" />
-            <element signature="e#6980#7066#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatAppBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="6" selection-start="34" selection-end="34" vertical-scroll-proportion="0.06656805" vertical-offset="0" max-vertical-offset="676">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatFeatureInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="50" selection-start="384" selection-end="384" vertical-scroll-proportion="0.22189349" vertical-offset="0" max-vertical-offset="676">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/BehatApp/BehatFeatureModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="58" selection-start="4184" selection-end="4184" vertical-scroll-proportion="0.5701358" vertical-offset="192" max-vertical-offset="915">
-          <folding>
-            <element signature="e#889#959#0" expanded="false" />
-            <element signature="e#965#1046#0" expanded="false" />
-            <element signature="e#1052#1695#0" expanded="false" />
-            <element signature="e#1186#1689#0" expanded="false" />
-            <element signature="e#1319#1689#0" expanded="false" />
-            <element signature="e#1338#1478#0" expanded="false" />
-            <element signature="e#1701#1963#0" expanded="false" />
-            <element signature="e#1743#1933#0" expanded="false" />
-            <element signature="e#1969#2406#0" expanded="false" />
-            <element signature="e#2083#2377#0" expanded="false" />
-            <element signature="e#2216#2377#0" expanded="false" />
-            <element signature="e#2244#2299#0" expanded="false" />
-            <element signature="e#2244#2335#0" expanded="false" />
-            <element signature="e#2412#3178#0" expanded="false" />
-            <element signature="e#2518#2650#0" expanded="false" />
-            <element signature="e#2659#3084#0" expanded="false" />
-            <element signature="e#2812#3084#0" expanded="false" />
-            <element signature="e#2831#3074#0" expanded="false" />
-            <element signature="e#2946#3074#0" expanded="false" />
-            <element signature="e#3184#3356#0" expanded="false" />
-            <element signature="e#3254#3350#0" expanded="false" />
-            <element signature="e#3362#4124#0" expanded="false" />
-            <element signature="e#3556#4118#0" expanded="false" />
-            <element signature="e#3709#3856#0" expanded="false" />
-            <element signature="e#3857#4118#0" expanded="false" />
-            <element signature="e#3876#4108#0" expanded="false" />
-            <element signature="e#3965#4108#0" expanded="false" />
-            <element signature="e#4130#4302#0" expanded="false" />
-            <element signature="e#4200#4296#0" expanded="false" />
-            <element signature="e#4308#4439#0" expanded="false" />
-            <element signature="e#4444#5027#0" expanded="false" />
-            <element signature="e#4722#4997#0" expanded="false" />
-            <element signature="e#4750#4805#0" expanded="false" />
-            <element signature="e#4750#4840#0" expanded="false" />
-            <element signature="e#4860#4997#0" expanded="false" />
-            <element signature="e#5033#5510#0" expanded="false" />
-            <element signature="e#5283#5362#0" expanded="false" />
-            <element signature="e#5283#5419#0" expanded="false" />
-            <element signature="e#5283#5479#0" expanded="false" />
-            <element signature="e#5516#6026#0" expanded="false" />
-            <element signature="e#5562#5656#0" expanded="false" />
-            <element signature="e#5666#5778#0" expanded="false" />
-            <element signature="e#5788#5884#0" expanded="false" />
-            <element signature="e#5894#5997#0" expanded="false" />
-            <element signature="e#6032#6227#0" expanded="false" />
-            <element signature="e#6095#6221#0" expanded="false" />
-            <element signature="e#6233#6411#0" expanded="false" />
-            <element signature="e#6417#6612#0" expanded="false" />
-            <element signature="e#6481#6606#0" expanded="false" />
-            <element signature="e#6618#6913#0" expanded="false" />
-            <element signature="e#6671#6882#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatBaseTests.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="13" selection-start="703" selection-end="705" vertical-scroll-proportion="0.33282906" vertical-offset="125" max-vertical-offset="1620">
-          <folding>
-            <element signature="e#696#761#0" expanded="false" />
-            <element signature="e#767#811#0" expanded="false" />
-            <element signature="e#817#888#0" expanded="false" />
-            <element signature="e#894#959#0" expanded="false" />
-            <element signature="e#2627#2968#0" expanded="false" />
-            <element signature="e#2685#2939#0" expanded="false" />
-            <element signature="e#2974#3579#0" expanded="false" />
-            <element signature="e#3032#3551#0" expanded="false" />
-            <element signature="e#3585#3666#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/BehatAppTests/Tests/BehatFeatureModelTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="38" selection-start="3001" selection-end="3019" vertical-scroll-proportion="0.2186589" vertical-offset="1035" max-vertical-offset="6660">
+        <state line="370" column="6" selection-start="15721" selection-end="15721" vertical-scroll-proportion="0.066103" vertical-offset="5434" max-vertical-offset="6735">
           <folding />
         </state>
       </provider>

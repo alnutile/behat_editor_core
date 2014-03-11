@@ -34,6 +34,7 @@ class BehatFeatureModelTest extends BehatBaseTests {
             $this->filesystem->remove($this->featureModelTestPath);
         }
         $this->filesystem->mkdir($this->featureModelTestPath);
+        $this->filesystem->mkdir($this->full_path, 0777);
 
     }
 
@@ -116,10 +117,11 @@ class BehatFeatureModelTest extends BehatBaseTests {
 
     public function testShowAll()
     {
-        $root_path              = "/tmp/getAll";
+        $root_path              = $this->full_path;
+        var_dump($root_path);
         $vcs = GitHelper::open($root_path, '/usr/bin/git', TRUE);
 
-        $this->createMany($root_path);
+        $this->createMany($root_path, $vcs);
         $output                 = $this->model->getAll(array($root_path), $vcs);
         $this->assertCount(4, $output);
     }
@@ -129,7 +131,7 @@ class BehatFeatureModelTest extends BehatBaseTests {
      */
     public function testNoRootFolder()
     {
-        $root_path              = "/tmp/getAll";
+        $root_path              = $this->full_path;
         $vcs = GitHelper::open($root_path, '/usr/bin/git', TRUE);
 
         if($this->filesystem->exists($root_path)) {
@@ -426,6 +428,9 @@ class BehatFeatureModelTest extends BehatBaseTests {
         if(!$this->filesystem->exists($root_path)) {
             $this->filesystem->mkdir($root_path);
         }
+        //Setup these new folders as git
+        GitHelper::open($root_path, '/usr/bin/git', TRUE);
+
         $this->full_path        = "$root_path/testExists1.feature";
         $this->full_path2       = "$root_path/testExists2.feature";
         $this->full_path3       = "$root_path/testExists3.feature";
