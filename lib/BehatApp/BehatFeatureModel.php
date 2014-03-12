@@ -45,19 +45,30 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
             if($output = $this->validate($content)){
                 return array('error' => 1, 'message' => $output, 'data' => $content);
             }
-            $this->filesystem->dumpFile($destination, $content, $mode = 0775);
-            $this->gitUpdate();
+            $vcs->writeFile($destination, $content, "Created file");
             return array('error' => 0, 'message' => 'Save Complete', 'data' => $content);
         }
     }
 
-    public function gitUpdate()
+
+    public function update(array $params, $vcs)
     {
-        if($this->vcs->isDirty()) {
-            $output = $this->vcs->add(null, TRUE);
-            $output .= $this->vcs->commit("Commit from behat editor", null, $author = null, array());
+        list($content, $destination) = $params;
+        $this->vcs = $vcs;
+        if(!$this->filesystem->exists($destination)) {
+            throw new BehatAppException("File does not exists $destination please use create");
+        } else {
+            if($output = $this->validate($content)){
+                return array('error' => 1, 'message' => $output, 'data' => $content);
+            }
+            try {
+                $vcs->writeFile($destination, $content, "Updated file");
+            }
+            catch(IOException $e) {
+                throw new BehatAppException("Can not update the file {$e->getMessage()}");
+            }
         }
-        return $output;
+        return array('error' => 0, 'message' => 'Update Complete', 'data' => $content);
     }
 
     public function getAll(array $params)
@@ -75,29 +86,10 @@ class BehatFeatureModel extends BehatAppBase implements BehatFeatureInterface {
         return $files;
     }
 
-    public function update(array $params, $vcs)
-    {
-        list($content, $destination) = $params;
-        if($output = $this->validate($content)){
-            return array('error' => 1, 'message' => $output, 'data' => $content);
-        }
-        if(!$this->filesystem->exists($destination)) {
-            throw new BehatAppException("File does not exists $destination please use create");
-        } else {
-            try {
-                $this->filesystem->dumpFile($destination, $content, $mode = 0775);
-            }
-            catch(IOException $e) {
-                throw new BehatAppException("Can not update the file {$e->getMessage()}");
-            }
-        }
-        return array('error' => 0, 'message' => 'Update Complete', 'data' => $content);
-    }
-
     public function updateMany(array $files_and_path, $vcs)
     {
         foreach($files_and_path as $file_and_path){
-            $this->update($file_and_path);
+            $this->update($file_and_path, $vcs);
         }
     }
 

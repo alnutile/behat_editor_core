@@ -3,6 +3,7 @@
 use BehatAppTests\Tests\BehatBaseTests;
 use org\bovigo\vfs\vfsStream;
 use BehatApp\GitHelper;
+use TQ\Git\StreamWrapper\StreamWrapper;
 
 class BehatFeatureModelTest extends BehatBaseTests {
 
@@ -95,9 +96,39 @@ class BehatFeatureModelTest extends BehatBaseTests {
         }
         $this->assertFalse($this->filesystem->exists($file));
         $this->model->create([$content, $file, $this->gitHelper], $vcs);
+        $this->assertFalse($vcs->isDirty());
         $this->assertFileExists($file, "Error: File wsa not there");
         $contentSaved = file_get_contents($file);
         $this->assertEquals($content, $contentSaved, "Error: Content does not match");
+    }
+
+    public function testUpdateGit()
+    {
+        $vcs = GitHelper::open($this->featureModelTestPath, '/usr/bin/git', TRUE);
+        if($this->filesystem->exists($this->featureModelTestPath . 'testNewFile.feature')) {
+            $this->filesystem->remove($this->featureModelTestPath . 'testNewFile.feature');
+        }
+        $this->assertFalse($vcs->isDirty());
+        $file = $this->featureModelTestPath . 'testNewFile.feature';
+        $content = $this->model->getNewModel();
+        $content = implode("\n", $content);
+        if($this->filesystem->exists($file)) {
+            $this->filesystem->remove($file);
+        }
+        $this->assertFalse($this->filesystem->exists($file));
+        $this->model->create([$content, $file, $this->gitHelper], $vcs);
+        $this->assertFileExists($file, "Error: File wsa not there");
+        $contentSaved = file_get_contents($file);
+        $this->assertEquals($content, $contentSaved, "Error: Content does not match");
+
+        //Now the update
+        $file_and_path = $this->featureModelTestPath . 'testNewFile.feature';
+
+        $this->model->update(["Feature Scenario Given I am", $file_and_path], $vcs);
+        $this->assertFalse($vcs->isDirty());
+
+        $contentUpdated = file_get_contents($this->featureModelTestPath . 'testNewFile.feature');
+        $this->assertEquals('Feature Scenario Given I am', $contentUpdated, "Error: Content does not match");
     }
 
 
