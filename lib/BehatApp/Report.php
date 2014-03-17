@@ -14,6 +14,7 @@ class Report {
     protected $browser;
     protected $os;
     protected $tags;
+    protected $url;
 
     public function __construct(array $params = null)
     {
@@ -29,6 +30,7 @@ class Report {
         $this->browser      = (isset($params['browser'])) ? $params['browser'] : '' ;
         $this->os           = (isset($params['os'])) ? $params['os'] : '' ;
         $this->tags         = (isset($params['tags'])) ? $params['tags'] : '' ;
+        $this->url          = (isset($params['url'])) ? $params['url'] : '' ;
     }
 
     /**
@@ -53,6 +55,16 @@ class Report {
     public function setCreated($created)
     {
         $this->created = $created;
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    public function setUrl($url)
+    {
+        $this->url = $url;
     }
 
     /**

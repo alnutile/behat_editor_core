@@ -18,9 +18,9 @@ class BaseReportsTest extends \PHPUnit_Framework_TestCase {
 
         $reportDefaults         = ReportRepository::dataArray();
 
-        $this->report1          = array_merge($reportDefaults, array('site_id' => 10, 'test_name' => 'testp.feature'));
+        $this->report1          = array_merge($reportDefaults, array('site_id' => 10, 'test_name' => 'testp.feature', 'rid' => 1));
 
-        $this->report2          = array_merge($reportDefaults, array('site_id' => 11, 'test_name' => 'test2.feature'));
+        $this->report2          = array_merge($reportDefaults, array('site_id' => 11, 'test_name' => 'test2.feature', 'rid' => 2));
     }
 
     public function tearDown()

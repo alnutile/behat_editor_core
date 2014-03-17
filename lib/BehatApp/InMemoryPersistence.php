@@ -17,4 +17,25 @@ class InMemoryPersistence implements Persistence {
     {
         return $this->data;
     }
+
+    public function delete($id)
+    {
+        foreach($this->data as $key => $value) {
+            if($value['rid'] == $id) {
+                unset($this->data[$key]);
+            }
+        }
+    }
+
+
+    public function retrieveBySiteIdAndTestName($id, $name)
+    {
+        $results = [];
+        foreach($this->data as $key) {
+            if($key['site_id'] == $id && $key['test_name'] == $name) {
+                $results[] = $key;
+            }
+        }
+        return $results;
+    }
 } 
