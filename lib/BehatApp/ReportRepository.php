@@ -55,11 +55,46 @@ class ReportRepository  {
 
     }
 
+    public function delete($report_id)
+    {
+        return $this->persistence->delete($report_id);
+    }
+
+    public function deleteMany(array $report_ids)
+    {
+        foreach ($report_ids as $value) {
+            $this->persistence->delete($value);
+        }
+    }
+
     public function findBySiteId($id)
     {
         return array_filter($this->findAll(), function($report) use ($id) {
             return $report->getSiteId() == $id;
         });
+    }
+
+    /**
+     * @param $method the key name as it comes out of ReportRepository::dataArray made camelCase from snake
+     * @param $value the value you are looking for
+     * @return array
+     */
+    public function findBy($method, $value)
+    {
+        return array_filter($this->findAll(), function($report) use ($value, $method) {
+            $method = "get$method";
+            return $report->$method() == $value;
+        });
+    }
+
+    public function findBySiteIdAndTestName($id, $name)
+    {
+        $allFound = $this->persistence->retrieveBySiteIdAndTestName($id, $name);
+        $reports = array();
+        foreach ($allFound as $reportData) {
+            $reports[] = $this->reportFactory->make($reportData);
+        }
+        return $reports;
     }
 
     /**
