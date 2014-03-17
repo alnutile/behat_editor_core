@@ -7,5 +7,5 @@ if (!file_exists($autoloadFile)) {
 require_once $autoloadFile;
 
 $loader = new \Composer\Autoload\ClassLoader();
-$loader->add('BehatAppTests\\Tests', 'tests/');
+//$loader->add('BehatAppTest\\Tests', __DIR__);
 $loader->register();

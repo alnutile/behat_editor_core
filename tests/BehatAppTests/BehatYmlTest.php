@@ -1,6 +1,7 @@
-<?php namespace BehatAppTests\Tests;
+<?php namespace BehatAppTests;
 
 use Symfony\Component\Filesystem\Filesystem;
+
 class BehatYmlTest extends BehatBaseTests {
 
     public $destination;

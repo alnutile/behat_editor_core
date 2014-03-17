@@ -1,4 +1,4 @@
-<?php  namespace BehatAppTests\Tests;
+<?php namespace BehatAppTests;
 
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Filesystem\Filesystem;
@@ -51,7 +51,7 @@ class BehatBaseTests extends \PHPUnit_Framework_TestCase
     {
         $current_base           = __DIR__;
         $current_base_array     = explode("/", $current_base);
-        $current_base_array     = array_slice($current_base_array, 0, -3);
+        $current_base_array     = array_slice($current_base_array, 0, -2);
         $this->app_base         = implode("/", $current_base_array);
         $this->templateFiles    = $this->app_base . '/lib/BehatApp/template_files/features/';
         $this->templateBehatYml = $this->app_base . '/lib/BehatApp/template_files/behat.yml';

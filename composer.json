@@ -14,16 +14,18 @@
         "symfony/config":  "*",
         "symfony/filesystem":  "*",
         "symfony/yaml":         "*",
-        "symfony/serializer":  "*"
+        "symfony/serializer":  "*",
+        "nesbot/Carbon": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "mikey179/vfsStream": "1.3.*@dev"
+        "mikey179/vfsStream": "1.3.*@dev",
+        "mockery/mockery": "*"
     },
     "autoload": {
         "psr-0": {
             "BehatApp\\": "lib/",
-            "BehatAppTests\\Tests\\": "tests/"
+            "BehatAppTests\\": "tests/"
         }
     }
 }

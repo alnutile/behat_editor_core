@@ -1,6 +1,5 @@
-<?php namespace BehatApp\Tests;
+<?php namespace BehatAppTests;
 
-use BehatAppTests\Tests\BehatBaseTests;
 use org\bovigo\vfs\vfsStream;
 
 class BehatFeatureModelTest extends BehatBaseTests {

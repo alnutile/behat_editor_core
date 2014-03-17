@@ -1,4 +1,4 @@
-<?php namespace BehatAppTests\Tests;
+<?php namespace BehatAppTests;
 
 use BehatApp\BehatHelper;
 use Symfony\Component\Filesystem\Filesystem;

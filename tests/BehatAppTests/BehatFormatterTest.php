@@ -1,4 +1,4 @@
-<?php namespace BehatAppTests\Tests;
+<?php namespace BehatAppTests;
 
 
 class BehatFormatterTest extends BehatBaseTests {
