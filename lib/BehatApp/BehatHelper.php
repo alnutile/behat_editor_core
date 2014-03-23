@@ -138,7 +138,7 @@ class BehatHelper
         {
             $this->behatYml_path = $path;
         } else {
-            $this->behatYml_path = $this->getBasePath() . 'behat.yml';
+            $this->behatYml_path = $this->getBasePath() . '/behat.yml';
         }
         return $this;
     }
