@@ -116,12 +116,20 @@ class BehatHelper
 
     public function replaceDashWithDots($name)
     {
-        return str_replace('_', '.', $name);
+        $search     = "_";
+        $replace    = ".";
+        $subject    = $name;
+
+        return substr_replace($subject, $replace, strrpos($subject, $search), strlen($search));
     }
 
     public function replaceDotsWithDashes($name)
     {
-        return str_replace('.', '_', $name);
+        $search     = ".";
+        $replace    = "_";
+        $subject    = $name;
+
+        return substr_replace($subject, $replace, strrpos($subject, $search), strlen($search));
     }
 
     public function getBehatYmlPath()

@@ -38,4 +38,16 @@ class InMemoryPersistence implements Persistence {
         }
         return $results;
     }
+
+
+    public function retrieveBySiteId($id)
+    {
+        $results = [];
+        foreach($this->data as $key) {
+            if($key['site_id'] == $id) {
+                $results[] = $key;
+            }
+        }
+        return $results;
+    }
 } 
